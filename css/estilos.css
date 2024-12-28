@@ -544,3 +544,85 @@ video{
     padding: 2rem;
     font-size: 2rem;
 }
+
+
+
+
+/* pagina de sobre nosotros y contacto  y estilo  */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(to right, #0033A0, #D50032);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #0033A0;
+}
+
+.sobre-nosotros {
+    margin-bottom: 2rem;
+}
+
+.sobre-nosotros p {
+    font-size: 1.2rem;
+}
+
+.formulario-contacto {
+    background: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: #0033A0;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #D50032;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #0033A0;
+    color: white;
+}
+/* estilos de las paginas de catalogos  */

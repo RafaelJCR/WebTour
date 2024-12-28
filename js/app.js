@@ -31,9 +31,9 @@ const botonCerrar = () =>{
     btnCerrar.textContent = 'x';
     btnCerrar.classList.add('btn-cerrar');
 
-    // while(navegacion.children[5]){
-    //     navegacion.removeChild(navegacion.children[5]);
-    // }
+    while(navegacion.children[5]){
+        navegacion.removeChild(navegacion.children[5]);
+    }
     navegacion.appendChild(btnCerrar);   
     cerrarMenu(btnCerrar,overlay);
     
@@ -114,3 +114,77 @@ const limpiarHtml = (contenedor) =>{
         contenedor.removeChild(contenedor.firstChild);
     }
 }
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     // Seleccionar los enlaces del menú
+//     const ceoLink = document.querySelector('a[href="ceo.html"]');
+//     const contactoLink = document.querySelector('a[href="contacto.html"]');
+//     const sobreNosotrosLink = document.querySelector('a[href="sobre-nosotros.html"]');
+
+//     // Agregar eventos de clic para redirigir
+//     ceoLink.addEventListener('click', (event) => {
+//         event.preventDefault(); // Evitar comportamiento predeterminado del enlace
+//         window.location.href = 'ceo.html'; // Redirigir a ceo.html
+//     });
+
+//     contactoLink.addEventListener('click', (event) => {
+//         event.preventDefault();
+//         window.location.href = 'contacto.html';
+//     });
+
+//     sobreNosotrosLink.addEventListener('click', (event) => {
+//         event.preventDefault();
+//         window.location.href = 'sobre-nosotros.html';
+//     });
+// });
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     // Código para abrir menú
+//     const menu = document.querySelector('.hamburguesa');
+//     const navegacion = document.querySelector('.navegacion');
+    
+//     menu.addEventListener('click', () => {
+//         navegacion.classList.toggle('ocultar');
+//     });
+
+//     // Código para hacer las imágenes clicables
+//     const imagenes = document.querySelectorAll('.platillo img');
+
+//     imagenes.forEach(imagen => {
+//         imagen.addEventListener('click', () => {
+//             alert('Imagen presionada: ' + imagen.alt);
+//         });
+//     });
+
+//     // Lazy loading de imágenes
+//     const observer = new IntersectionObserver((entries) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 const img = entry.target;
+//                 img.src = img.dataset.src;
+//                 observer.unobserve(img);
+//             }
+//         });
+//     });
+
+//     document.querySelectorAll('img[data-src]').forEach(img => {
+//         observer.observe(img);
+//     });
+// });
+document.addEventListener('DOMContentLoaded', () => {
+    const platillos = document.querySelectorAll('.platillo');
+
+    platillos.forEach(platillo => {
+        platillo.addEventListener('click', (event) => {
+            event.preventDefault(); // Evitar el comportamiento por defecto del enlace
+
+            const imagen = platillo.dataset.imagen;
+            const titulo = platillo.dataset.titulo;
+            const descripcion = platillo.dataset.descripcion;
+
+            // Redirigir a la página de detalles con parámetros en la URL
+            window.location.href = `detalle.html?imagen=${encodeURIComponent(imagen)}&titulo=${encodeURIComponent(titulo)}&descripcion=${encodeURIComponent(descripcion)}`;
+        });
+    });
+});
