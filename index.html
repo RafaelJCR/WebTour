@@ -80,6 +80,61 @@
 <button class="pizza btn" style="background-color: #0077B6; color: white;">Buggys</button>
 <button class="postres btn" style="background-color: #0077B6; color: white;">Shopping</button>
         </div>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Platillo</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="detalle">
+        <h1 id="titulo-platillo"></h1>
+        <img id="imagen-platillo" src="" alt="Imagen del Platillo">
+        <p id="descripcion-platillo"></p>
+        <a href="index.html" class="btn">Volver al Menú</a>
+    </div>
+
+    <script>
+        // Obtén los parámetros de la URL
+        const params = new URLSearchParams(window.location.search);
+        const imagen = params.get('imagen');
+        const titulo = params.get('titulo');
+        const descripcion = params.get('descripcion');
+
+        // Asigna los valores a los elementos de la página
+        document.getElementById('titulo-platillo').textContent = titulo;
+        document.getElementById('imagen-platillo').src = imagen;
+        document.getElementById('descripcion-platillo').textContent = descripcion;
+    </script>
+</body>
+</html>
+
+
+
+        <div class="platillos">
+    <div class="platillo" 
+         data-imagen="assets/img/ensalada.webp" 
+         data-titulo="Ensalada de Quinoa" 
+         data-descripcion="Quinoa, cerezas, tomate, aceitunas, cereal.">
+        <img src="assets/img/ensalada.webp" alt="ensalada">
+        <h2>Quinoa</h2>
+        <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
+    </div>
+
+    <div class="platillo" 
+         data-imagen="assets/img/pasta.webp" 
+         data-titulo="Pasta al Pesto" 
+         data-descripcion="Deliciosa pasta al pesto con un toque de parmesano.">
+        <img src="assets/img/pasta.webp" alt="pasta">
+        <h2>Pasta</h2>
+        <p>Deliciosa pasta al pesto con un toque de parmesano.</p>
+    </div>
+</div>
+
         <div class="platillos">
             <div class="platillo" data-platillo="ensalada">
                 <img data-src="assets/img/ensalada.webp" alt="ensalada">

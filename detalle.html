@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Platillo</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="detalle">
+        <h1 id="titulo-platillo"></h1>
+        <img id="imagen-platillo" src="" alt="Imagen del Platillo">
+        <p id="descripcion-platillo"></p>
+        <a href="index.html" class="btn">Volver al Menú</a>
+    </div>
+
+    <script>
+        // Obtén los parámetros de la URL
+        const params = new URLSearchParams(window.location.search);
+        const imagen = params.get('imagen');
+        const titulo = params.get('titulo');
+        const descripcion = params.get('descripcion');
+
+        // Depurar valores
+        console.log('Imagen:', imagen);
+        console.log('Título:', titulo);
+        console.log('Descripción:', descripcion);
+
+        // Verifica si los valores no están vacíos
+        if (imagen && titulo && descripcion) {
+            // Asigna los valores a los elementos de la página
+            document.getElementById('titulo-platillo').textContent = titulo;
+            document.getElementById('imagen-platillo').src = imagen;
+            document.getElementById('descripcion-platillo').textContent = descripcion;
+        } else {
+            console.error('Faltan parámetros en la URL');
+        }
+    </script>
+</body>
+</html>
