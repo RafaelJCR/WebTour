@@ -172,6 +172,9 @@ const limpiarHtml = (contenedor) =>{
 //         observer.observe(img);
 //     });
 // });
+
+
+//la funcionalidad de que las fotos se puedan presionar 
 document.addEventListener('DOMContentLoaded', () => {
     const platillos = document.querySelectorAll('.platillo');
 
@@ -188,3 +191,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
