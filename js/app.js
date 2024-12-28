@@ -144,19 +144,20 @@ const limpiarHtml = (contenedor) =>{
 // });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const platillos = document.querySelectorAll('.platillo');
+    // Datos de los platillos
+    const platillos = [
+        { id: 1, imagen: 'images/ensalada.jpg', titulo: 'Ensalada de Quinoa', descripcion: 'Quinoa, cerezas, tomate, aceitunas, cereal.' },
+        { id: 2, imagen: 'images/pasta.jpg', titulo: 'Pasta al Pesto', descripcion: 'Pasta con salsa pesto, piñones, albahaca, parmesano.' },
+        { id: 3, imagen: 'images/pizza.jpg', titulo: 'Pizza Margherita', descripcion: 'Masa fina, tomate, mozzarella, albahaca.' },
+        // Agrega más platillos según sea necesario
+    ];
 
-    platillos.forEach((platillo) => {
-        platillo.addEventListener('click', (event) => {
-            event.preventDefault(); // Evitar el comportamiento por defecto del enlace
+    const platillosElements = document.querySelectorAll('.platillo');
 
-            const imagen = platillo.dataset.imagen; // Asegúrate de tener este atributo en tu HTML
-            const titulo = platillo.dataset.titulo; // Asegúrate de tener este atributo en tu HTML
-            const descripcion = platillo.dataset.descripcion; // Asegúrate de tener este atributo en tu HTML
-
-            // Redirigir a la página de detalles con parámetros en la URL
-            window.location.href = `detalle.html?imagen=${encodeURIComponent(imagen)}&titulo=${encodeURIComponent(titulo)}&descripcion=${encodeURIComponent(descripcion)}`;
+    platillosElements.forEach((platilloElement, index) => {
+        platilloElement.addEventListener('click', () => {
+            // Usamos el ID del platillo para redirigir a detalle.html
+            window.location.href = `detalle.html?id=${platillos[index].id}`;
         });
     });
 });
-

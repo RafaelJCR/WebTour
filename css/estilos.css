@@ -625,69 +625,44 @@ footer {
     background: #0033A0;
     color: white;
 }
-/* estilos de las paginas de catalogos  */
-.detalle-rafael {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+/* estilos de las paginas de catalogos  */body {
+    font-family: Arial, sans-serif;
+}
+
+.detalle {
     text-align: center;
-    background-color: #f4f4f4;
+    padding: 20px;
 }
 
-.detalle-rafael h1 {
-    font-size: 3rem;
-    color: #D50032;
+.detalle img {
+    width: 100%;
+    max-width: 500px;
 }
 
-.detalle-rafael .btn {
+.detalle .btn {
+    display: inline-block;
+    background-color: #D50032;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
     margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #0033A0;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
-.detalle-rafael .btn:hover {
-    background-color: #001f70;
-}
-.detalle-platillo {
+.platillos {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.platillo {
+    width: 30%;
     text-align: center;
-    background-color: #f4f4f4;
-}
-
-.detalle-platillo h1 {
-    font-size: 2.5rem;
-    color: #D50032;
     margin-bottom: 20px;
 }
 
-.detalle-platillo img {
-    max-width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-}
-
-.detalle-platillo .btn {
-    padding: 10px 20px;
-    background-color: #0033A0;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.detalle-platillo .btn:hover {
-    background-color: #001f70;
+.platillo img {
+    width: 100%;
+    max-width: 300px;
+    cursor: pointer;
 }

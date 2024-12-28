@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,25 +15,30 @@
     </div>
 
     <script>
-        // Obtén los parámetros de la URL
+        // Datos de los platillos
+        const platillos = [
+            { id: 1, imagen: 'images/ensalada.jpg', titulo: 'Ensalada de Quinoa', descripcion: 'Quinoa, cerezas, tomate, aceitunas, cereal.' },
+            { id: 2, imagen: 'images/pasta.jpg', titulo: 'Pasta al Pesto', descripcion: 'Pasta con salsa pesto, piñones, albahaca, parmesano.' },
+            { id: 3, imagen: 'images/pizza.jpg', titulo: 'Pizza Margherita', descripcion: 'Masa fina, tomate, mozzarella, albahaca.' },
+            // Agrega más platillos según sea necesario
+        ];
+
+        // Obtener el ID del platillo desde la URL
         const params = new URLSearchParams(window.location.search);
-        const imagen = params.get('imagen');
-        const titulo = params.get('titulo');
-        const descripcion = params.get('descripcion');
+        const idPlatillo = parseInt(params.get('id'));
 
-        // Depurar valores
-        console.log('Imagen:', imagen);
-        console.log('Título:', titulo);
-        console.log('Descripción:', descripcion);
+        // Encontrar el platillo correspondiente al ID
+        const platilloSeleccionado = platillos.find(platillo => platillo.id === idPlatillo);
 
-        // Verifica si los valores no están vacíos
-        if (imagen && titulo && descripcion) {
-            // Asigna los valores a los elementos de la página
-            document.getElementById('titulo-platillo').textContent = titulo;
-            document.getElementById('imagen-platillo').src = imagen;
-            document.getElementById('descripcion-platillo').textContent = descripcion;
+        if (platilloSeleccionado) {
+            // Asignar los datos al HTML
+            document.getElementById('titulo-platillo').textContent = platilloSeleccionado.titulo;
+            document.getElementById('imagen-platillo').src = platilloSeleccionado.imagen;
+            document.getElementById('descripcion-platillo').textContent = platilloSeleccionado.descripcion;
         } else {
-            console.error('Faltan parámetros en la URL');
+            // Si no se encuentra el platillo, mostrar un error
+            document.getElementById('titulo-platillo').textContent = 'Platillo no encontrado';
+            document.getElementById('descripcion-platillo').textContent = 'Lo sentimos, este platillo no está disponible.';
         }
     </script>
 </body>
