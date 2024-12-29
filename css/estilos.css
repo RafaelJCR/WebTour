@@ -1,7 +1,7 @@
 :root {
-    --verde: #00A149;
+    --azul: #00A8E8;
     --blanco: #fff;
-    --rojo: #881014;
+    --rojo: #00A8E8;
     --oscuro: #000;
     --titulos: 'Arima Madurai', cursive;
     --parrafos: 'Mulish', sans-serif;
@@ -40,8 +40,8 @@ img {
     max-width: 100%;
 }
 
-.verde {
-    color: var(--verde);
+.azul {
+    color: var(--azul);
 }
 
 .rojo {
@@ -124,16 +124,23 @@ img {
     margin-bottom: 2rem;
 }
 
-.btn-verde {
-    background-color: var(--verde);
+.btn-azul {
+    background-color: #00A8E8; /* Azul oceánico */
     border: none;
     display: inline-block;
     margin-bottom: 2rem;
     font-family: var(--parrafos);
+    color: #FFFFFF; /* Texto blanco para contraste */
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.btn-verde:hover {
-    background-color: var(--rojo);
+.btn-azul:hover {
+    background-color: #0077B6; /* Azul más oscuro para hover */
 }
 
 /* Encabezado */
@@ -178,7 +185,7 @@ img {
 }
 
 .navegacion a:nth-child(odd):hover {
-    color: var(--verde);
+    color: var(--azul);
 }
 
 .navegacion a:first-of-type {
@@ -269,7 +276,7 @@ video {
 
 .texto-nosotros .bienvenida {
     font-size: 4rem;
-    color: var(--verde);
+    color: var(--rojo); /* Aquí se cambia el color */
     text-align: center;
 }
 
@@ -389,17 +396,4 @@ video {
     padding: 1rem;
     border-radius: 5px;
     border: none;
-    background-color: var(--rojo);
-    color: var(--blanco);
-    height: 3.8rem;
-}
-
-.separador {
-    background-image: url('../assets/img/ensalada.webp');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: relative;
-    z-index: 2;
-}
-
+    background-color
