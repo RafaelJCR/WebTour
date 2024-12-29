@@ -91,12 +91,6 @@
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <div class="detalle">
-        <h1 id="titulo-platillo"></h1>
-        <img id="imagen-platillo" src="" alt="Imagen del Platillo">
-        <p id="descripcion-platillo"></p>
-        <a href="index.html" class="btn">Volver al Menú</a>
-    </div>
 
     <script>
         // Obtén los parámetros de la URL
@@ -110,142 +104,50 @@
         document.getElementById('imagen-platillo').src = imagen;
         document.getElementById('descripcion-platillo').textContent = descripcion;
     </script>
-</body>
-</html>
 
 
 
-        <div class="platillos">
-    <div class="platillo" 
-         data-imagen="assets/img/ensalada.webp" 
-         data-titulo="Excursion Saona" 
-         data-descripcion="Quinoa, cerezas, tomate, aceitunas, cereal.">
-        <img src="assets/img/ensalada.webp" alt="ensalada">
-        <h2>Quinoa</h2>
+
+</div> 
+
+<div class="platillos">
+    <!-- Platillo 1: Ensalada de Quinoa -->
+    <div class="platilloos">
+        <!-- Imagen que también es un enlace -->
+        <a href="detalle-ensalada.html">
+            <img src="images/ensalada.jpg" alt="Ensalada de Quinoa">
+        </a>
+        <!-- Título del platillo como enlace -->
+        <h2><a href="detalle-ensalada.html">Ensalada de Quinoa</a></h2>
         <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
     </div>
 
-    <div class="platillo" 
-         data-imagen="assets/img/pasta.webp" 
-         data-titulo="Pasta al Pesto" 
-         data-descripcion="Deliciosa pasta al pesto con un toque de parmesano.">
-        <img src="assets/img/pasta.webp" alt="pasta">
-        <h2>Pasta</h2>
-        <p>Deliciosa pasta al pesto con un toque de parmesano.</p>
+    <!-- Platillo 2: Pasta al Pesto -->
+    <div class="platilloo">
+        <!-- Imagen que también es un enlace -->
+        <a href="detalle-pasta.html">
+            <img src="images/pasta.jpg" alt="Pasta al Pesto">
+        </a>
+        <!-- Título del platillo como enlace -->
+        <h2><a href="detalle-pasta.html">Pasta al Pesto</a></h2>
+        <p>Pasta con salsa pesto, piñones, albahaca, parmesano.</p>
+    </div>
+
+    <!-- Platillo 3: Pizza Margherita -->
+    <div class="platilloss">
+        <!-- Imagen que también es un enlace -->
+        <a href="detalle-pizza.html">
+            <img src="images/pizza.jpg" alt="Pizza Margherita">
+        </a>
+        <!-- Título del platillo como enlace -->s
+        <h2><a href="detalle-pizza.html">Pizza Margherita</a></h2>
+        <p>Masa fina, tomate, mozzarella, albahaca.</p>
+        <p>$400.0</p>
+        <button><i class="fas fa-shopping-basket"></i></button>
     </div>
 </div>
 
-        <div class="platillos">
-            <div class="platillo" data-platillo="ensalada">
-                <img data-src="assets/img/ensalada.webp" alt="ensalada">
-                <h2>Quinoa</h2>
-                <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
-                <div class="precio">
-                    <p>$40.0</p>
-                    <button><i class="fas fa-shopping-basket"></i></button>
-                </div>;
-            </div>
-            <div class="platillo" data-platillo="ensalada">
-                <img data-src="assets/img/ensalada2.webp" alt="ensalada">
-                <h2>Quinoa</h2>
-                <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
-                <div class="precio">
-                    <p>$40.0</p>
-                    <button><i class="fas fa-shopping-basket"></i></button>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="ensalada">
-                <img data-src="assets/img/ensalada2.webp" alt="ensalada">
-                <h2>Quinoa</h2>
-                <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
-                <div class="precio">
-                    <p>$40.0</p>
-                    <button><i class="fas fa-shopping-basket"></i></button>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="pasta">
-                <img data-src="assets/img/pasta1.webp" alt="pasta">
-                <h2>Quinoa</h2>
-                <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
-                <div class="precio">
-                    <p>$40.0</p>
-                    <button><i class="fas fa-shopping-basket"></i></button>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="pasta">
-                <img data-src="assets/img/pasta2.webp" alt="pasta">
-                <h2>Quinoa</h2>
-                <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
-                <div class="precio">
-                    <p>$40.0</p>
-                    <button><i class="fas fa-shopping-basket"></i></button>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="pasta">
-                <img data-src="assets/img/pasta2.webp" alt="pasta">
-                <h2>Quinoa</h2>
-                <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
-                <div class="precio">
-                    <p>$40.0</p>
-                    <button><i class="fas fa-shopping-basket"></i></button>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="pizza">
-                <img data-src="assets/img/pizza1.webp" alt="pizza">
-                <h2>Quinoa</h2>
-                <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
-                <div class="precio">
-                    <p>$40.0</p>
-                    <button><i class="fas fa-shopping-basket"></i></button>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="pizza">
-                <img data-src="assets/img/pizza2.webp" alt="pizza">
-                <h2>Quinoa</h2>
-                <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
-                <div class="precio">
-                    <p>$40.0</p>
-                    <button><i class="fas fa-shopping-basket"></i></button>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="pizza">
-                <img data-src="assets/img/pizza2.webp" alt="pizza">
-                <h2>Quinoa</h2>
-                <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
-                <div class="precio">
-                    <p>$40.0</p>
-                    <button><i class="fas fa-shopping-basket"></i></button>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="postre">
-                <img data-src="assets/img/postres1.webp" alt="postre">
-                <h2>Quinoa</h2>
-                <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
-                <div class="precio">
-                    <p>$40.0</p>
-                    <button><i class="fas fa-shopping-basket"></i></button>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="postre">
-                <img data-src="assets/img/postres2.webp" alt="postre">
-                <h2>Quinoa</h2>
-                <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
-                <div class="precio">
-                    <p>$40.0</p>
-                    <button><i class="fas fa-shopping-basket"></i></button>
-                </div>
-            </div>
-            <div class="platillo" data-platillo="postre">
-                <img data-src="assets/img/postres2.webp" alt="postre">
-                <h2>Quinoa</h2>
-                <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
-                <div class="precio">
-                    <p>$40.0</p>
-                    <button><i class="fas fa-shopping-basket"></i></button>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Puedes seguir con los otros platillos si lo deseas -->
 
     <div class="separador">
         <div class="contenido-separador contenedor">
