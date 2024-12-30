@@ -71,16 +71,7 @@
         </div>
     </div>
 
-    <section class="menu contenedor">
-        <h2 class="texto-platillos">Excursiones populares</h2>
-        <div class="botones-platillos">
-            <button class="todos btn" style="background-color: #00A8E8; color: white;">All</button>
-<button class="ensaladas btn" style="background-color: #00A8E8; color: white;">Tours</button>
-<button class="pasta btn" style="background-color: #00A8E8; color: white;">Buceo</button>
-<button class="pizza btn" style="background-color: #00A8E8; color: white;">Buggys</button>
-<button class="postres btn" style="background-color: #00A8E8; color: white;">Shopping</button>
-        </div>
-
+ 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -108,45 +99,117 @@
 
 
 
-</div> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platos</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        .platillos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .platilloo, .platilloos, .platilloss {
+            flex: 1 1 calc(33.333% - 20px); /* Tres elementos por fila */
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .hidden {
+            display: none; /* Ocultar elementos */
+        }
+        
+    </style>
+</head>
+<body>
 
-<div class="platillos">
-    <!-- Platillo 1: Ensalada de Quinoa -->
-    <div class="platilloos">
-        <!-- Imagen que también es un enlace -->
-        <a href="detalle-ensalada.html">
-            <img src="images/ensalada.jpg" alt="Ensalada de Quinoa">
-        </a>
-        <!-- Título del platillo como enlace -->
-        <h2><a href="detalle-ensalada.html">Ensalada de Quinoa</a></h2>
-        <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
+    
+
+        <h2 class="texto-platillos">Servicios Disponibles</h2>
+
+
+      
+            <!-- Botón para mostrar todos los platos -->
+            <button class="todos btn" style="background-color: #00A8E8; color: white;">All</button>
+    <script>
+        // Obtener referencia al botón "All"
+        const allButton = document.querySelector('.todos');
+
+        // Mostrar todos los platos al hacer clic en el botón "All"
+        allButton.addEventListener('click', () => {
+            const platillos = document.querySelectorAll('.platilloo, .platilloos, .platilloss');
+            platillos.forEach(platillo => {
+                platillo.classList.remove('hidden'); // Mostrar todos los platos
+            });
+        });
+    </script>
+
+
+
+            <!-- Botón para mostrar solo Pasta al Pesto -->
+            <button class="buggys btn" style="background-color: #00A8E8; color: white;">Buggys</button>
+        </div>
+    </section>
+
+
+
+    <div class="platillos">
+        <!-- Platillo 1: Ensalada de Quinoa -->
+        <div class="platilloos">
+            <a href="detalle-ensalada.html">
+                <img src="images/ensalada.jpg" alt="Ensalada de Quinoa">
+            </a>
+            <h2><a href="detalle-ensalada.html">Ensalada de Quinoa</a></h2>
+            <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
+        </div>
+
+        <!-- Platillo 2: Pasta al Pesto -->
+        <div class="platilloo">
+            <a href="detalle-pasta.html">
+                <img src="images/pasta.jpg" alt="Pasta al Pesto">
+            </a>
+            <h2><a href="detalle-pasta.html">Pasta al Pesto</a></h2>
+            <p>Pasta con salsa pesto, piñones, albahaca, parmesano.</p>
+        </div>
+
+        <!-- Platillo 3: Pizza Margherita -->
+        <div class="platilloss">
+            <a href="detalle-pizza.html">
+                <img src="images/pizza.jpg" alt="Pizza Margherita">
+            </a>
+            <h2><a href="detalle-pizza.html">Pizza Margherita</a></h2>
+            <p>Masa fina, tomate, mozzarella, albahaca.</p>
+            <p>$400.0</p>
+            <button><i class="fas fa-shopping-basket"></i></button>
+        </div>
     </div>
 
-    <!-- Platillo 2: Pasta al Pesto -->
-    <div class="platilloo">
-        <!-- Imagen que también es un enlace -->
-        <a href="detalle-pasta.html">
-            <img src="images/pasta.jpg" alt="Pasta al Pesto">
-        </a>
-        <!-- Título del platillo como enlace -->
-        <h2><a href="detalle-pasta.html">Pasta al Pesto</a></h2>
-        <p>Pasta con salsa pesto, piñones, albahaca, parmesano.</p>
-    </div>
+    <script>
+        // Función para mostrar platos por clase
+        function mostrarPlatos(clase) {
+            const todosPlatillos = document.querySelectorAll('.platilloo, .platilloos, .platilloss');
+            todosPlatillos.forEach(platillo => platillo.classList.add('hidden')); // Ocultar todos
+            const seleccionados = document.querySelectorAll(clase);
+            seleccionados.forEach(platillo => platillo.classList.remove('hidden')); // Mostrar seleccionados
+        }
 
-    <!-- Platillo 3: Pizza Margherita -->
-    <div class="platilloss">
-        <!-- Imagen que también es un enlace -->
-        <a href="detalle-pizza.html">
-            <img src="images/pizza.jpg" alt="Pizza Margherita">
-        </a>
-        <!-- Título del platillo como enlace -->s
-        <h2><a href="detalle-pizza.html">Pizza Margherita</a></h2>
-        <p>Masa fina, tomate, mozzarella, albahaca.</p>
-        <p>$400.0</p>
-        <button><i class="fas fa-shopping-basket"></i></button>
-    </div>
-</div>
+        // Botón "All" muestra todos los platos
+        document.querySelector('.todos').addEventListener('click', () => {
+            const todosPlatillos = document.querySelectorAll('.platilloo, .platilloos, .platilloss');
+            todosPlatillos.forEach(platillo => platillo.classList.remove('hidden')); // Mostrar todos
+        });
 
+        // Botón "Buggys" muestra solo "Pasta al Pesto"
+        document.querySelector('.buggys').addEventListener('click', () => {
+            mostrarPlatos('.platilloo');
+        });
+    </script>
+</body>
+</html>
     <!-- Puedes seguir con los otros platillos si lo deseas -->
 
     <div class="separador">
