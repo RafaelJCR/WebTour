@@ -474,3 +474,122 @@ body {
     width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
 }
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    background: url('assets/img/dominican-republic-1884286_1920.jpg') no-repeat center center/cover; /* Imagen de fondo para el encabezado */
+    color: #e800cd;
+    text-align: center;
+    padding: 2rem 0; /* Incremento del padding para dar espacio a la imagen */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #452da8; /* Color amarillo vibrante para el título */
+}
+
+header p {
+    margin: 0;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: #ffffff; /* Texto blanco para el subtítulo */
+}
+
+/* Contenido principal */
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección "Sobre Nosotros" */
+.sobre-nosotros {
+    margin-bottom: 2rem;
+}
+
+.sobre-nosotros h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #0074d9; /* Azul fuerte para los títulos */
+}
+
+.sobre-nosotros p {
+    font-size: 1rem;
+    margin: 0;
+    color: #444; /* Gris oscuro para el texto */
+}
+
+/* Formulario de contacto */
+.formulario-contacto {
+    margin-top: 2rem;
+}
+
+.formulario-contacto h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #0074d9; /* Azul fuerte para los títulos */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #555; /* Gris medio para las etiquetas */
+}
+
+input, textarea {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    border-color: #0074d9;
+    outline: none;
+}
+
+button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: #fff;
+    background: #0074d9;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #005bb5;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #333;
+    color: #fff;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}

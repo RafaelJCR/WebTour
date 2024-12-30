@@ -1,29 +1,138 @@
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="contacto.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ristorante Italiano</title>
+    <script src="https://kit.fontawesome.com/283335a286.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        /* Eliminar cualquier borde, margen o relleno global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fondo de la página */
+        body {
+            background-image: url('assets/img/beach1.jpeg'); /* Aquí va el enlace de la imagen */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: 'Mulish', sans-serif;
+            font-size: 1.5em; /* Aumenta el tamaño de fuente de todo el cuerpo en un 1.5 veces */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Garantiza que el contenido cubra toda la altura de la pantalla */
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Fondo oscuro para mejorar la visibilidad */
+        }
+
+        header h1 {
+            font-family: 'Arima Madurai', sans-serif;
+            font-size: 5vw; /* Ajuste dinámico según el tamaño de la ventana */
+            color: #FFFFFF;
+        }
+
+        header p {
+            color: #FFFFFF;
+            font-size: 2vw; /* Ajuste dinámico según el tamaño de la ventana */
+        }
+
+        /* Estilo para hacer el formulario más acogedor */
+        .formulario-contacto {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centra el formulario */
+            width: 80%; /* Ajuste de tamaño para la mayoría de pantallas */
+            max-width: 400px; /* Limita el tamaño máximo */
+            background: rgba(0, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Sombra para dar efecto flotante */
+            color: #FFFFFF; /* Letras blancas */
+            z-index: 1000; /* Asegura que el formulario esté por encima de otros elementos */
+        }
+
+        .formulario-contacto h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 2.5em; /* Ajuste de tamaño */
+        }
+
+        .formulario-contacto label {
+            font-size: 1.2em; /* Aumenta el tamaño de las etiquetas de los campos */
+            margin-bottom: 5px;
+        }
+
+        .formulario-contacto input,
+        .formulario-contacto textarea {
+            width: 100%;
+            margin: 8px 0;
+            padding: 12px; /* Aumenta el padding para un diseño más espacioso */
+            font-size: 1.3em; /* Aumenta el tamaño del texto dentro de los campos */
+            color: #FFFFFF; /* Cambiar el texto de los campos a blanco */
+            background: rgba(255, 255, 255, 0.1); /* Fondo transparente para los campos */
+            border: 1px solid #FFFFFF; /* Borde blanco */
+            border-radius: 8px; /* Bordes redondeados para los campos */
+            outline: none; /* Elimina el borde azul cuando se hace clic en los campos */
+        }
+
+        .formulario-contacto input:focus,
+        .formulario-contacto textarea:focus {
+            border: 1px solid #D50032; /* Cambiar el borde cuando se hace clic en los campos */
+        }
+
+        .formulario-contacto button {
+            background-color: #D50032;
+            color: #FFFFFF;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            padding: 15px;
+            font-size: 1.5em; /* Aumenta el tamaño del botón */
+            border-radius: 8px; /* Bordes redondeados para el botón */
+            width: 100%; /* Asegura que el botón ocupe todo el ancho del formulario */
+        }
+
+        .formulario-contacto button:hover {
+            background-color: #9e0031;
+        }
+
+        /* Pie de página */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #0033A0;
+            color: #FFFFFF;
+            font-size: 1.5em; /* Aumenta el tamaño del texto en el pie de página */
+            margin-top: auto; /* Asegura que el pie de página se quede en el fondo */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Excursiones Caribeños</h1>
+        <h1>
+            <span style="color: #FFFFFF;">excursiones</span>
+            <span style="color: #0033A0;">car</span>
+            <span style="color: #FFFFFF;">ibe</span>
+            <span style="color: #D50032;">ños</span>
+        </h1>
         <p>¡Tu mejor experiencia de turismo en el Caribe!</p>
     </header>
     <main>
-        <section class="sobre-nosotros">
-            <h2>Sobre Nosotros</h2>
-            <p>Somos una empresa apasionada por ofrecer experiencias inolvidables de turismo en el Caribe. Nos especializamos en recorridos exclusivos, aventuras personalizadas y el mejor servicio al cliente para hacer de tu viaje algo único.</p>
-        </section>
         <section class="formulario-contacto">
             <h2>Contáctanos</h2>
             <form id="contactForm">
@@ -34,7 +143,7 @@
                 <input type="email" id="email" name="email" placeholder="Tu correo" required>
                 
                 <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Tu mensaje" required></textarea>
                 
                 <button type="submit">Enviar</button>
             </form>
