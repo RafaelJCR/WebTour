@@ -26,13 +26,10 @@
                         <span style="color: #FFFFFF;">ibe</span>
                         <span style="color: #D50032;">ños</span>
                       </h2>
-                      <nav class="navegacion ocultar">
-                        <a href="sobre-nosotros.html">Sobre Nosotros / Contacto </a>
-                        
-                    </nav>
 
 
-        
+
+                      
                     
                 </nav>
                 <div class="hamburguesa">
@@ -43,12 +40,24 @@
         <div class="contenido-header">
             <div class="contenedor-encabezado">
                 <div class="texto-encabezado">
+                    
                     <h2>¡Bienvenidos!</h2>
+                
                     <a href="#" class="btn bordes">Il mostrar menú</a>
+
+                    <nav class="navegacion ocultar">
+
+                        <a href="sobre-nosotros.html">Sobre Nosotros / Contacto </a>
+         
                 </div>
+                
+                <hr class="decoracion-video"> <!-- Línea decorativa -->
+
                 <video autoplay loop muted>
-                <source src="assets/img/videopagina1 (1) (1) (1).mp4">
+                    <source src="assets/img/videopagina1 (1) (1) (1).mp4">
                 </video>
+                
+                <hr class="decoracion-video"> <!-- Línea decorativa -->
             </div>
         </div>
     </header>
@@ -152,6 +161,7 @@
 
             <!-- Botón para mostrar solo Pasta al Pesto -->
             <button class="buggys btn" style="background-color: #00A8E8; color: white;">Buggys</button>
+            <button class="Island buggys btn" style="background-color: #00A8E8; color: white;">Island</button>
  
 
 
@@ -159,7 +169,7 @@
       <!-- primeros servicios -->
 <div class="platillos">
 
-    <div class="platilloos">
+    <div class="platilloos Island">
         <a href="isla saona.html">
             <img src="assets/img/postres3.jpg" alt="Saona Island">
         </a>
@@ -167,7 +177,7 @@
         <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
     </div>
 
-    <div class="platilloos">
+    <div class="platilloos Island">
         <a href="isla catalina.html">
             <img src="images/ensalada.jpg" alt="Catalina Island">
         </a>
@@ -175,15 +185,13 @@
         <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
     </div>
 
-    <div class="platilloo">
+    <div class="platilloo buggy">
         <a href="Aventura en buggy .html">
             <img src="assets/img/buggys1producto.webp" alt="Aventura en buggy">
         </a>
         <h2><a href="Aventura en buggy.html">Aventura en buggy</a></h2>
         <p>buggy buggy.</p>
     </div>
-
-</div>
 
 
             <!-- segunda fila de Servicios -->
@@ -261,7 +269,11 @@
 
         // Botón "Buggys" muestra solo "Pasta al Pesto"
         document.querySelector('.buggys').addEventListener('click', () => {
-            mostrarPlatos('.platilloo');
+            mostrarPlatos('.buggy');
+        });
+            // Botón "Buggys" muestra solo "Pasta al Pesto"
+            document.querySelector('.Island').addEventListener('click', () => {
+            mostrarPlatos('.Island');
         });
     </script>
 </body>
