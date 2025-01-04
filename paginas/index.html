@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ristorante Italiano</title>
+    <script src="https://kit.fontawesome.com/283335a286.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Mulish:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <header class="encabezado">
+        <div class="contenedor-navegacion">
+            <div class="contenido-navegacion contenedor">
+                <div class="logo">
+                    <h2 style="white-space: nowrap;">
+                        <span style="color: #FFFFFF;">excursiones</span>
+                        <span style="color: #0033A0;">car</span>
+                        <span style="color: #FFFFFF;">ibe</span>
+                        <span style="color: #D50032;">ños</span>
+                      </h2>
+
+
+
+                      
+                    
+                </nav>
+                <div class="hamburguesa">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        <div class="contenido-header">
+            <div class="contenedor-encabezado">
+                <div class="texto-encabezado">
+                    
+                    <h2>¡Bienvenidos!</h2>
+                
+                    <a href="#" class="btn bordes">Il mostrar menú</a>
+
+                    <nav class="navegacion ocultar">
+
+                        <a href="sobre-nosotros.html">Sobre Nosotros / Contacto </a>
+         
+                </div>
+                
+                <hr class="decoracion-video"> <!-- Línea decorativa -->
+
+                <video autoplay loop muted>
+                    <source src="assets/img/videopagina1 (1) (1) (1).mp4">
+                </video>
+                
+                <hr class="decoracion-video"> <!-- Línea decorativa -->
+            </div>
+        </div>
+    </header>
+
+    <div class="contenedor-nosotros contenedor">
+        <div class="texto-nosotros">
+            <p class="bienvenida">Bienvenido a!</p>
+            <h1>Excursiones Caribe</h1>
+            <p> Descubre el paraíso con Excursiones Cabreza. Te llevamos a las impresionantes islas Saona y Catalina, donde playas de arena blanca, aguas cristalinas y vibrantes arrecifes de coral te esperan. Disfruta de experiencias únicas de buceo y relajación, acompañado por guías expertos que harán de tu visita un recuerdo inolvidable. ¡El Caribe te llama! </p>
+            <a href="#" class=" btn-azul">Contactar</a>
+        </div>
+        <div class="imagenes-nosotros">
+            <div class="imagen1">
+               <img data-src="assets/img/dominican-republic-1884286_1920.jpg" alt="foto playa primera">
+            </div>
+            <div class="imagenes2">
+                <img data-src="assets/img/basilica.jpg" alt="basilica foto">
+                <img data-src="assets/img/istockphoto-681917346-612x612.jpg" alt="foto de delfines ">
+            </div>
+        </div>
+    </div>
+
+ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Excursiones</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <script>
+        // Obtén los parámetros de la URL
+        const params = new URLSearchParams(window.location.search);
+        const imagen = params.get('imagen');
+        const titulo = params.get('titulo');
+        const descripcion = params.get('descripcion');
+
+        // Asigna los valores a los elementos de la página
+        document.getElementById('titulo-platillo').textContent = titulo;
+        document.getElementById('imagen-platillo').src = imagen;
+        document.getElementById('descripcion-platillo').textContent = descripcion;
+    </script>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platos</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        .platillos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .platilloo, .platilloos, .platilloss {
+            flex: 1 1 calc(33.333% - 20px); /* Tres elementos por fila */
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .hidden {
+            display: none; /* Ocultar elementos */
+        }
+        
+    </style>
+</head>
+<body>
+
+    
+
+        <h2 class="texto-platillos">Servicios Disponibles</h2>
+
+
+      
+            <!-- Botón para mostrar todos los platos -->
+            <button class="todos btn" style="background-color: #00A8E8; color: white;">All</button>
+    <script>
+        // Obtener referencia al botón "All"
+        const allButton = document.querySelector('.todos');
+
+        // Mostrar todos los platos al hacer clic en el botón "All"
+        allButton.addEventListener('click', () => {
+            const platillos = document.querySelectorAll('.platilloo, .platilloos, .platilloss');
+            platillos.forEach(platillo => {
+                platillo.classList.remove('hidden'); // Mostrar todos los platos
+            });
+        });
+    </script>
+
+
+
+            <!-- Botón para mostrar solo Pasta al Pesto -->
+            <button class="buggys btn" style="background-color: #00A8E8; color: white;">Buggys</button>
+            <button class="Island buggys btn" style="background-color: #00A8E8; color: white;">Island</button>
+ 
+
+
+        <!-- primeros platillos  -->
+      <!-- primeros servicios -->
+<div class="platillos">
+
+    <div class="platilloos Island">
+        <a href="isla saona.html">
+            <img src="assets/img/postres3.jpg" alt="Saona Island">
+        </a>
+        <h2><a href="isla saona.html">Saona Island</a></h2>
+        <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
+    </div>
+
+    <div class="platilloos Island">
+        <a href="isla catalina.html">
+            <img src="images/ensalada.jpg" alt="Catalina Island">
+        </a>
+        <h2><a href="isla catalina.html">Catalina Island</a></h2>
+        <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
+    </div>
+
+    <div class="platilloo buggy">
+        <a href="Aventura en buggy .html">
+            <img src="assets/img/buggys1producto.webp" alt="Aventura en buggy">
+        </a>
+        <h2><a href="Aventura en buggy.html">Aventura en buggy</a></h2>
+        <p>buggy buggy.</p>
+    </div>
+
+
+            <!-- segunda fila de Servicios -->
+  
+        <div class="platilloos">
+            <a href="detalle-ensalada.html">
+                <img src="assets/img/buggys22producto.webp" alt="Ensalada de Quinoa">
+            </a>
+            <h2><a href="detalle-ensalada.html">Ensalada de Quinoa</a></h2>
+            <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
+        </div>
+                
+      
+            <div class="platilloos">
+                <a href="detalle-ensalada.html">
+                    <img src="assets/img/buggys22producto.webp" alt="Ensalada de Quinoa">
+                </a>
+                <h2><a href="detalle-ensalada.html">Ensalada de Quinoa</a></h2>
+                <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
+            </div>
+     
+
+        <div class="platilloo">
+            <a href="detalle-pasta.html">
+                <img src="images/pasta.jpg" alt="Pasta al Pesto">
+            </a>
+            <h2><a href="detalle-pasta.html">Pasta al Pesto</a></h2>
+            <p>Pasta con salsa pesto, piñones, albahaca, parmesano.</p>
+        </div>
+
+        <!-- tercera fila de Servicios -->
+
+        <div class="platillos">
+  
+            <div class="platilloos">
+                <a href="detalle-ensalada.html">
+                    <img src="images/ensalada.jpg" alt="Ensalada de Quinoa">
+                </a>
+                <h2><a href="detalle-ensalada.html">Ensalada de Quinoa</a></h2>
+                <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
+            </div>
+                    
+          
+                <div class="platilloos">
+                    <a href="detalle-ensalada.html">
+                        <img src="images/ensalada.jpg" alt="Ensalada de Quinoa">
+                    </a>
+                    <h2><a href="detalle-ensalada.html">Ensalada de Quinoa</a></h2>
+                    <p>Quinoa, cerezas, tomate, aceitunas, cereal.</p>
+                </div>
+         
+    
+            <div class="platilloo">
+                <a href="detalle-pasta.html">
+                    <img src="images/pasta.jpg" alt="Pasta al Pesto">
+                </a>
+                <h2><a href="detalle-pasta.html">Pasta al Pesto</a></h2>
+                <p>Pasta con salsa pesto, piñones, albahaca, parmesano.</p>
+            </div>
+
+    <script>
+        // Función para mostrar platos por clase
+        function mostrarPlatos(clase) {
+            const todosPlatillos = document.querySelectorAll('.platilloo, .platilloos, .platilloss');
+            todosPlatillos.forEach(platillo => platillo.classList.add('hidden')); // Ocultar todos
+            const seleccionados = document.querySelectorAll(clase);
+            seleccionados.forEach(platillo => platillo.classList.remove('hidden')); // Mostrar seleccionados
+        }
+
+        // Botón "All" muestra todos los platos
+        document.querySelector('.todos').addEventListener('click', () => {
+            const todosPlatillos = document.querySelectorAll('.platilloo, .platilloos, .platilloss');
+            todosPlatillos.forEach(platillo => platillo.classList.remove('hidden')); // Mostrar todos
+        });
+
+        // Botón "Buggys" muestra solo "Pasta al Pesto"
+        document.querySelector('.buggys').addEventListener('click', () => {
+            mostrarPlatos('.buggy');
+        });
+            // Botón "Buggys" muestra solo "Pasta al Pesto"
+            document.querySelector('.Island').addEventListener('click', () => {
+            mostrarPlatos('.Island');
+        });
+    </script>
+</body>
+</html>
+    <!-- Puedes seguir con los otros platillos si lo deseas -->
+
+    <section class="chef contenedor">
+        <h2>Chef ejecutivo</h2>
+        <div class="contenido-chef">
+            <div class="texto-chef">
+                <h3>La exelencia está en la diversidad y el modo de progresar
+                    es conocer y comparar las diversidades de productos, culturas y
+                    técnicas
+                </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus corporis dolores eveniet
+                    vitae,
+                    natus tempora recusandae hic laborum error ducimus repellat, laudantium temporibus tenetur totam
+                    sint
+                    consequuntur eligendi! Asperiores, ad.</p>
+                <a href="#" class="btn btn-azul">Leer Bíografia</a>
+            </div>
+            <div class="imagen-chef">
+                <img data-src="/assets/img/chef.webp" alt="fotografia del chef">
+            </div>
+        </div>
+    </section>
+
+    <div class="formulario-contacto contenedor">
+
+        <div class="informacion-contacto">
+            <h3>Contactanos</h3>
+            <p><i class="fas fa-map-marker-alt"></i>Punta cana, Bavaro</p>
+            <p><i class="fas fa-envelope"></i> excursionescaribe@gmail.com</p>
+            <p><i class="fas fa-phone-alt"></i>+1 849 268 6519</p>
+            <div class="redes-sociales">
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-twitter-square"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+            </div>
+            
+        </form>
+    </div>
+    <div class="pie-pagina ">
+        <div class="contenedor-piepagina contenedor">
+            <div class="info">
+                <h3>Dirección</h3>
+                <p>Bavaro punta cana</p>
+            </div>
+            <div class="info">
+                <h3>Días especiales</h3>
+                <p>Sabados y Domingo 6am - 2pm</p>
+                <p>+1 849-268-6519</p>
+            </div>
+            <div class="info">
+                <h3>Horarios</h3>
+                <p>Lunes - Domingo 6am - 8pm</p>
+                <div class="redes-sociales redes-pie">
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+      
+    </div>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
