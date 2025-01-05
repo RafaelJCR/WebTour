@@ -13,19 +13,19 @@
 #menu-icon:hover {
     background-color: #444;
 }
-/
+
 /* Estilo para el menú */
 #menu {
     position: fixed;
     top: 0;
-    left: 800px; /* Asegura que el menú esté en el lado izquierdo */
+    left: 850px;
     width: 200px;
-    height: 70%;
-    background-color: rgba(29, 26, 26, 0.445); /* Fondo semitransparente */
+    height: 100%;
+    background-color: white;
     color: black;
     padding: 20px;
     display: none;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Sombra a la derecha */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilo para los enlaces dentro del menú */
@@ -47,14 +47,14 @@
     position: absolute;
     z-index: 1000;
     top: 50px; /* Ajusta la posición para que esté justo debajo del icono */
-    left: 50px; /* Asegura que la ventana se muestre al lado del ícono */
+    left: 250px; /* Asegura que la ventana se muestre al lado del ícono */
     width: 300px; /* Define el ancho del modal */
     background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
 }
 
 .modal-content {
     position: relative;
-    background-color: rgba(10, 10, 10, 0.404);
+    background-color: white;
     padding: 20px;
     width: 100%;
     border-radius: 8px;
@@ -67,7 +67,7 @@
     right: 10px;
     font-size: 30px;
     cursor: pointer;
-    color: rgb(235, 227, 227);
+    color: black;
 }
 
 /* Estilo para el botón de cerrar cuando se pasa el cursor */
@@ -79,6 +79,7 @@
 .menu-toggle:checked ~ #modal {
     display: block;
 }
+
 
 
 :root {
