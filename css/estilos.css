@@ -1,3 +1,85 @@
+/* Estilo para el icono de menú */
+#menu-icon {
+    font-size: 40px;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative; /* Esto es importante para la posición del modal */
+}
+
+#menu-icon:hover {
+    background-color: #444;
+}
+/
+/* Estilo para el menú */
+#menu {
+    position: fixed;
+    top: 0;
+    left: 800px; /* Asegura que el menú esté en el lado izquierdo */
+    width: 200px;
+    height: 70%;
+    background-color: rgba(29, 26, 26, 0.445); /* Fondo semitransparente */
+    color: black;
+    padding: 20px;
+    display: none;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Sombra a la derecha */
+}
+
+/* Estilo para los enlaces dentro del menú */
+#menu a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+#menu a:hover {
+    color: #007BFF;
+}
+
+/* Estilos para la ventana modal */
+.modal {
+    display: none; /* Inicialmente oculta */
+    position: absolute;
+    z-index: 1000;
+    top: 50px; /* Ajusta la posición para que esté justo debajo del icono */
+    left: 50px; /* Asegura que la ventana se muestre al lado del ícono */
+    width: 300px; /* Define el ancho del modal */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
+}
+
+.modal-content {
+    position: relative;
+    background-color: rgba(10, 10, 10, 0.404);
+    padding: 20px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(235, 227, 227);
+}
+
+/* Estilo para el botón de cerrar cuando se pasa el cursor */
+.close-btn:hover {
+    color: #FF0000;
+}
+
+/* Mostrar la ventana modal cuando el checkbox está marcado */
+.menu-toggle:checked ~ #modal {
+    display: block;
+}
+
 
 :root {
     --azul: #00A8E8;

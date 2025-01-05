@@ -21,39 +21,51 @@
                     <span style="color: #D50032;">ños</span>
                 </h2>
             </div>
-
-            <!-- Contenedor del menú -->
     
         </style>
+  
     </head>
-    <body>
-        <title>Menú de Tres Rayitas</title>
-        <!-- Enlace al archivo CSS externo -->
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menú con botón de Cerrar</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <title>Menú sin CSS</title>
-    </head>
-    <body>
         <div class="menu-container">
+            <!-- Menú que aparece en la pantalla -->
             <span id="menu-icon">☰</span>
-            <div id="menu" style="display: none;">
+            <div id="menu">
+                <!-- Botón de cierre -->
+                <span id="close-btn" class="close-btn">&times;</span>
                 <a href="sobre-nosotros.html">Sobre Nosotros</a><br>
-                <a href="contacto.html">Contacto</a><br>
-                <a href="servicios.html">Servicios</a>
+                <!-- Puedes agregar más enlaces aquí -->
             </div>
         </div>
     
         <script>
             const menuIcon = document.getElementById('menu-icon');
             const menu = document.getElementById('menu');
+            const closeBtn = document.getElementById('close-btn');
     
+            // Mostrar el menú al hacer clic en el icono
             menuIcon.addEventListener('click', () => {
                 menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+            });
+    
+            // Cerrar el menú al hacer clic en la "X"
+            closeBtn.addEventListener('click', () => {
+                menu.style.display = 'none';
             });
         </script>
     </body>
     </html>
+    
+    
+        </script>
+  
     </body>
     </html>
     </header>
@@ -170,7 +182,7 @@
     <!-- Primer fila -->
     <div class="platilloos Island">
         <a href="isla-saona.html">
-            <img src="assets/img/islacatalina1.jpg" alt="Saona Island">
+            <img src="assets/img/saona3.webp" alt="Saona Island">
         </a>
         <h2><a href="isla-saona.html">Saona Island</a></h2>
         <p>Explora la belleza de la isla Saona.</p>
