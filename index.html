@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<title>Ristorante Italiano</title>
-<script src="https://kit.fontawesome.com/283335a286.js" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Mulish:wght@400;700&display=swap"
-    rel="stylesheet">
-<link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="css/estilos.css">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excursiones Caribe</title>
+    <script src="https://kit.fontawesome.com/283335a286.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
@@ -21,130 +24,119 @@
                     <span style="color: #D50032;">ños</span>
                 </h2>
             </div>
+<!-- Contenedor del menú -->
+<nav>
+    <details id="menu">
+        <summary id="menu-icon" onclick="toggleMenu()">☰</summary> <!-- Solo el icono del menú -->
+        <div class="navegacion">
+            <div class="close-btn" onclick="closeMenu()">X</div> <!-- Botón de cierre -->
+            <a href="sobre-nosotros.html">Sobre Nosotros / Contacto</a>
+        </div>
+    </details>
+</nav>
 
-            <!-- Contenedor del menú -->
-            <nav>
-                <!-- Elemento "details" que actúa como el botón hamburguesa -->
-                <details>
-                    <summary>☰</summary> <!-- Este es el icono del boton -->
-                    <div class="navegacion">
-                        <a href="sobre-nosotros.html">Sobre Nosotros / Contacto</a>
-                    </div>
-                </details>
-            </nav>
+<script>
+    // Función para alternar entre el icono ☰ y X
+    function toggleMenu() {
+        const menuIcon = document.getElementById('menu-icon');
+        const menu = document.getElementById('menu');
+        
+    
+    }
 
+    // Función para cerrar el menú al hacer clic en la X
+    function closeMenu() {
+        const menuIcon = document.getElementById('menu-icon');
+        const menu = document.getElementById('menu');
+        
+        menuIcon.textContent = '☰'; // Restablecer el icono de menú
+        menu.open = false; // Cerrar el menú
+    }
+</script>
+
+<!-- Estilos adicionales para la "X" y el menú -->
+<style>
+    /* Estilo para el icono ☰ */
+    #menu-icon {
+        font-size: 36px; /* Hacer el icono 25% más grande */
+        color: rgb(240, 235, 235); /* Cambiar el color a blanco */
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+
+    /* Estilo para el botón de cierre (X) */
+    .close-btn {
+        font-size: 24px;
+        cursor: pointer;
+        margin-top: 10px;
+        text-align: right;
+        color: rgb(236, 235, 235); /* Color de la X (puedes cambiarlo si lo deseas) */
+    }
+
+    /* Diseño básico del menú */
+    .navegacion {
+        padding: 20px;
+        display: block;
+        background-color: #131111ab;
+    }
+
+    /* Estilo para ocultar el botón de cierre cuando no es necesario */
+    details[open] .close-btn {
+        display: block;
+    }
+
+    details:not([open]) .close-btn {
+        display: none;
+    }
+</style>
+
+            </script>
+            
         </div>
     </div>
-    </header>
-                
-                <hr class="decoracion-video"> <!-- Línea decorativa -->
+</header>
 
-                <video autoplay loop muted>
-                    <source src="assets/img/videopagina1 (1) (1) (1).mp4">
-                </video>
-                
-                <hr class="decoracion-video"> <!-- Línea decorativa -->
-            </div>
-        </div>
-    </header>
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Excursiones Caribe</title>
-        <link rel="stylesheet" href="css/estilos.css">
-        <style>
-            /* Estilo general para los contenedores */
-            .contenedor-nosotros {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 20px;
-            }
-    
-            .imagenes-nosotros {
-                display: flex;
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-    
-            .imagen1 img, .imagenes2 img {
-                max-width: 100%;
-                height: auto;
-                border-radius: 8px;
-                object-fit: cover; /* Asegura que la imagen cubra su contenedor */
-            }
-    
-            /* Estilos para los platillos */
-            .platillos {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: center; /* Centra los elementos */
-            }
-    
-            .platilloos, .platilloo {
-                width: 300px; /* Ajusta el tamaño de cada contenedor */
-                text-align: center;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                padding: 10px;
-                box-sizing: border-box;
-            }
-    
-            img {
-                width: 100%; /* Asegura que las imágenes cubran el contenedor */
-                height: auto;
-                border-radius: 5px;
-                object-fit: cover;
-            }
-    
-            .btn {
-                padding: 10px 20px;
-                border: none;
-                cursor: pointer;
-                margin: 5px;
-                font-size: 16px;
-            }
-    
-            .hidden {
-                display: none;
-            }
-        </style>
-    </head>
-    <body>
-    
-        <!-- Sección Nosotros -->
-        <div class="contenedor-nosotros contenedor">
-            <div class="texto-nosotros">
-                <p class="bienvenida">Bienvenido a!</p>
-                <h1>Excursiones Caribe</h1>
-                <p> Descubre el paraíso con Excursiones Caribe. Te llevamos a las impresionantes islas Saona y Catalina, donde playas de arena blanca, aguas cristalinas y vibrantes arrecifes de coral te esperan. Disfruta de experiencias únicas de buceo y relajación, acompañado por guías expertos que harán de tu visita un recuerdo inolvidable. ¡El Caribe te llama! </p>
-                <a href="#" class="btn btn-azul">Contactar</a>
-            </div>
-            <div class="imagenes-nosotros">
-                <div class="imagen1">
-                    <img src="assets/img/dominican-republic-1884286_1920.jpg" alt="foto playa primera">
-                </div>
-                <div class="imagenes2">
-                    <img src="assets/img/basilica.jpg" alt="basilica foto">
-                    <img src="assets/img/istockphoto-681917346-612x612.jpg" alt="foto de delfines">
-                </div>
-            </div>
-        </div>
-    
-        <!-- Botones para filtrar -->
-        <div>
-            <div class="imagenes-nosotros"></div>
-            <button class="todos btn" style="background-color: #00A8E8; color: white;">all</button>
-            <button class="buggys btn" style="background-color: #00A8E8; color: white;">Buggys</button>
-            <button class="Island btn" style="background-color: #00A8E8; color: white;">Isla</button>
-            <button class="tours btn" style="background-color: #00A8E8; color: white;">tours</button>
+<!-- Línea decorativa -->
+<hr class="decoracion-video"> 
 
+<!-- Video -->
+<video autoplay loop muted style="display: block; width: 100%; height: auto; margin: 0; padding: 0;">
+    <source src="assets/img/videopagina1 (1) (1) (1).mp4">
+</video>
+
+<!-- Línea decorativa -->
+<hr class="decoracion-video"> 
+
+<!-- Sección Nosotros -->
+<div class="contenedor-nosotros contenedor">
+    <div class="texto-nosotros">
+        <p class="bienvenida">Bienvenido a!</p>
+        <h1>Excursiones Caribe</h1>
+        <p>Descubre el paraíso con Excursiones Caribe. Te llevamos a las impresionantes islas Saona y Catalina, donde playas de arena blanca, aguas cristalinas y vibrantes arrecifes de coral te esperan. Disfruta de experiencias únicas de buceo y relajación, acompañado por guías expertos que harán de tu visita un recuerdo inolvidable. ¡El Caribe te llama!</p>
+        <a href="#" class="btn btn-azul">Contactar</a>
+    </div>
+    <div class="imagenes-nosotros">
+        <div class="imagen1">
+            <img src="assets/img/dominican-republic-1884286_1920.jpg" alt="foto playa primera">
         </div>
-    
-   <!-- Contenedor de platillos (todos dentro de una misma clase) -->
+        <div class="imagenes2">
+            <img src="assets/img/basilica.jpg" alt="basilica foto">
+            <img src="assets/img/istockphoto-681917346-612x612.jpg" alt="foto de delfines">
+        </div>
+    </div>
+</div>
+
+<!-- Botones para filtrar -->
+<div>
+    <div class="imagenes-nosotros"></div>
+    <button class="todos btn" style="background-color: #00A8E8; color: white;">all</button>
+    <button class="buggys btn" style="background-color: #00A8E8; color: white;">Buggys</button>
+    <button class="Island btn" style="background-color: #00A8E8; color: white;">Isla</button>
+    <button class="tours btn" style="background-color: #00A8E8; color: white;">tours</button>
+</div>
+
+<!-- Contenedor de platillos -->
 <div class="platillos">
     <!-- Primer fila -->
     <div class="platilloos Island">
@@ -174,224 +166,76 @@
     <!-- Segunda fila -->
     <div class="platilloos Island">
         <a href="isla-catalina-and-diving.html">
-            <img src="assets/img/snorkel-arrecifes-isla-saona.jpg" alt="catalina Island and diving ">
+            <img src="assets/img/snorkel-arrecifes-isla-saona.jpg" alt="catalina Island and diving">
         </a>
-        <h2><a href="isla-catalina-and-diving.html">catalina Island and diving</a></h2>
+        <h2><a href="isla-catalina-and-diving.html">Catalina Island and diving</a></h2>
         <p>Explora la belleza de la Saona Island and diving.</p>
     </div>
 
     <div class="platilloos Island">
         <a href="isla-catalina-and-snorkel.html">
-            <img src="assets/img/Isla-Catalina2.jpg" alt="isla-catalina-and-snorkel">
+            <img src="assets/img/Isla-Catalina2.jpg" alt="Isla Catalina and snorkel">
         </a>
-        <h2><a href="isla-catalina-and-snorkel.html">isla catalina and snorkel</a></h2>
+        <h2><a href="isla-catalina-and-snorkel.html">Isla Catalina and snorkel</a></h2>
         <p>Disfruta de las aguas cristalinas en Catalina.</p>
     </div>
 
     <div class="platilloo Island">
         <a href="samana-island.html">
-            <img src="assets/img/cayo-levantado-samana.jpg" alt="samana-island">
+            <img src="assets/img/cayo-levantado-samana.jpg" alt="Samana Island">
             <p>$40.0</p>
         </a>
-        <h2><a href="samana-island.html">samana-island</a></h2>
-        <p>samana-island.</p>
+        <h2><a href="samana-island.html">Samana Island</a></h2>
+        <p>Samana Island.</p>
     </div>
 
     <!-- Tercera fila -->
     <div class="platilloos Island">
         <a href="private-speedboat-excursion-to-saona-island.html">
-            <img src="assets/img/64809720e520e-islasaonaexcursionlanchaiway.jpg" alt="catalina Island and diving ">
+            <img src="assets/img/64809720e520e-islasaonaexcursionlanchaiway.jpg" alt="Catalina Island and diving">
         </a>
-        <h2><a href="private-speedboat-excursion-to-saona-island.html">private-speedboat-excursion-to-saona-island</a></h2>
-        <p>samana-island.</p>
+        <h2><a href="private-speedboat-excursion-to-saona-island.html">Private speedboat excursion to Saona Island</a></h2>
+        <p>Samana Island.</p>
     </div>
 
     <div class="platilloos Island">
         <a href="saona-island-excursion-private-boat-from-10-to-60-people-all-incluided.html">
-            <img src="assets/img/WhatsApp-Image-2024-02-25-at-6.30.01-PM-scaled-e1708913739654 (2).jpeg" alt="isla-catalina-and-snorkel">
+            <img src="assets/img/WhatsApp-Image-2024-02-25-at-6.30.01-PM-scaled-e1708913739654 (2).jpeg" alt="Isla Catalina and snorkel">
         </a>
-        <h2><a href="saona-island-excursion-private-boat-from-10-to-60-people-all-incluided.html">saona island excursion private boat from 10 to 60 people-all incluided</a></h2>
+        <h2><a href="saona-island-excursion-private-boat-from-10-to-60-people-all-incluided.html">Saona Island Excursion Private Boat (10-60 people)</a></h2>
         <p>Disfruta de las aguas cristalinas en Catalina.</p>
     </div>
-    <div class="platilloos tours">
-        <a href="samana Cayo LEVANTADO Y CASCADA EL LIMON FROM PUNTACANA.html">
-            <img src="assets/img/d6b8a9df-cbd0-461a-90b5-f7a9e87c8240.avif" alt="samana Cayo LEVANTADO Y CASCADA EL LIMON FROM PUNTACANA">
-        </a>
-        <h2><a href="samana Cayo LEVANTADO Y CASCADA EL LIMON FROM PUNTACANA.html">samana Cayo LEVANTADO Y CASCADA EL LIMON FROM PUNTACANA</a></h2>
-        <p>Disfruta de samana Cayo LEVANTADO Y CASCADA EL LIMON FROM PUNTACANA.</p>
-    </div>
-    <div class="platilloos tours">
-        <a href="HIGUEY CITY TOUR PRIVATE.html">
-            <img src="assets/img/Basílica-de-Nuestra-Señora-de-la-Altagracia-672x372-1.jpg" alt="isla-catalina-and-snorkel">
-        </a>
-        <h2><a href="HIGUEY CITY TOUR PRIVATE.html">HIGUEY CITY TOUR PRIVATE</a></h2>
-        <p>HIGUEY CITY TOUR PRIVATE.</p>
-    </div>
-    <div class="platilloos tours">
-        <a href="Santo Domingo.html">
-            <img src="assets/img/santo-domingo-tour-1.jpg" alt="Santo Domingo">
-        </a>
-        <h2><a href="Santo Domingo.html">Santo Domingo</a></h2>
-        <p>Santo Domingo.</p>
-    </div>
-    <div class="platilloos tours">
-        <a href="delfines.html">
-            <img src="assets/img/638-2.jpg" alt="delfines">
-        </a>
-        <h2><a href="delfines.html">Delfines</a></h2>
-        <p>delfines.</p>
-    </div>
-    <div class="platilloos tours">
-        <a href="Hacienda park.html">
-            <img src="assets/img/telesilla-hacienda-park.webp" alt="Hacienda park">
-        </a>
-        <h2><a href="Hacienda park.html">Hacienda park</a></h2>
-        <p>Hacienda park.</p>
-    </div>
-    <div class="platilloos tours">
-        <a href="Coco bongo.html">
-            <img src="assets/img/photographed-alain-strassberg.jpg" alt="Coco bongo">
-        </a>
-        <h2><a href="Coco bongo.html">Coco bongo </a></h2>
-        <p>Coco bongo.</p>
-    </div>
-    <div class="platilloos tours">
-        <a href="SHOPPING.html">
-            <img src="assets/img/Mercado-Modelo-@conoce_rd-edited-scaled.jpg" alt="SHOPPING">
-        </a>
-        <h2><a href="SHOPPING.html">SHOPPING </a></h2>
-        <p>SHOPPING.</p>
-    </div>
-    <div class="platilloos tours">
-        <a href="LOS HAITISES.html">
-            <img src="assets/img/Parque-Nacional-Los-Haitises.webp" alt="los haitises">
-        </a>
-        <h2><a href="los haitises.html">los haitises </a></h2>
-        <p>los haitises.</p>
-    
 </div>
 
+<script>
+    // Función para mostrar los diferentes platillos
+    function mostrarPlatos(clase) {
+        const todosPlatillos = document.querySelectorAll('.platilloo, .platilloos');
+        todosPlatillos.forEach(platillo => platillo.classList.add('hidden')); // Ocultar todos
+        const seleccionados = document.querySelectorAll(clase);
+        seleccionados.forEach(platillo => platillo.classList.remove('hidden')); // Mostrar seleccionados
+    }
 
+    // Botón "Todos" muestra todos los platos
+    document.querySelector('.todos').addEventListener('click', () => {
+        const todosPlatillos = document.querySelectorAll('.platilloo, .platilloos');
+        todosPlatillos.forEach(platillo => platillo.classList.remove('hidden')); // Mostrar todos
+    });
 
+    // Botón "Buggys" muestra solo los platos de clase "buggy"
+    document.querySelector('.buggys').addEventListener('click', () => {
+        mostrarPlatos('.buggy');
+    });
 
-        <script>
-            // Función para mostrar los diferentes platillos
-            function mostrarPlatos(clase) {
-                const todosPlatillos = document.querySelectorAll('.platilloo, .platilloos');
-                todosPlatillos.forEach(platillo => platillo.classList.add('hidden')); // Ocultar todos
-                const seleccionados = document.querySelectorAll(clase);
-                seleccionados.forEach(platillo => platillo.classList.remove('hidden')); // Mostrar seleccionados
-            }
-        
-            // Botón "Todos" muestra todos los platos
-            document.querySelector('.todos').addEventListener('click', () => {
-                const todosPlatillos = document.querySelectorAll('.platilloo, .platilloos');
-                todosPlatillos.forEach(platillo => platillo.classList.remove('hidden')); // Mostrar todos
-            });
-        
-            // Botón "Buggys" muestra solo los platos de clase "buggy"
-            document.querySelector('.buggys').addEventListener('click', () => {
-                mostrarPlatos('.buggy');
-            });
-        
-            // Botón "Island" muestra solo los platos de clase "Island"
-            document.querySelector('.islands').addEventListener('click', () => {
-                mostrarPlatos('.Island');
-            });
-                  // Botón "Island" muestra solo los platos de clase "Island"
-                  document.querySelector('.tours').addEventListener('click', () => {
-                mostrarPlatos('.tours');
-            });
-        </script>
-        
-     
-    
+    // Botón "Island" muestra solo los platos de clase "Island"
+    document.querySelector('.Island').addEventListener('click', () => {
+        mostrarPlatos('.Island');
+    });
 
-    
-    </div> <!-- Cierre de contenedor de platillos -->
-    
-    <script>
-        // Función para mostrar platos por clase
-        function mostrarPlatos(clase) {
-            const todosPlatillos = document.querySelectorAll('.platilloo, .platilloos');
-            todosPlatillos.forEach(platillo => platillo.classList.add('hidden')); // Ocultar todos
-            const seleccionados = document.querySelectorAll(clase);
-            seleccionados.forEach(platillo => platillo.classList.remove('hidden')); // Mostrar seleccionados
-        }
-    
-        // Botón "Todos" muestra todos los platos
-        document.querySelector('.todos').addEventListener('click', () => {
-            const todosPlatillos = document.querySelectorAll('.platilloo, .platilloos');
-            todosPlatillos.forEach(platillo => platillo.classList.remove('hidden')); // Mostrar todos
-        });
-    
-        // Botón "Buggys" muestra solo los platos de clase "buggy"
-        document.querySelector('.buggys').addEventListener('click', () => {
-            mostrarPlatos('.buggy');
-        });
-    
-        // Botón "Island" muestra solo los platos de clase "Island"
-        document.querySelector('.Island').addEventListener('click', () => {
-            mostrarPlatos('.Island');
-        });
-           // Botón "Island" muestra solo los platos de clase "Island"
-           document.querySelector('.tours').addEventListener('click', () => {
-            mostrarPlatos('.tours');
-        });
-    </script>
-    
-    <!-- Sección del chef -->
-    <section class="chef contenedor">
-        <h2>Chef ejecutivo</h2>
-        <div class="contenido-chef">
-            <div class="texto-chef">
-                <h3>La excelencia está en la diversidad y el modo de progresar es conocer y comparar las diversidades de productos, culturas y técnicas</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus corporis dolores eveniet vitae, natus tempora recusandae hic laborum error ducimus repellat, laudantium temporibus tenetur totam sint consequuntur eligendi! Asperiores, ad.</p>
-                <a href="#" class="btn btn-azul">Leer Biografía</a>
-            </div>
-            <div class="imagen-chef">
-                <img src="assets/img/chef.webp" alt="fotografía del chef">
-            </div>
-        </div>
-    </section>
-    
-    <!-- Sección de formulario de contacto -->
-    <div class="formulario-contacto contenedor">
-        <div class="informacion-contacto">
-            <h3>Contáctanos</h3>
-            <p><i class="fas fa-map-marker-alt"></i> Punta Cana, Bávaro</p>
-            <p><i class="fas fa-envelope"></i> excursionescaribe@gmail.com</p>
-            <p><i class="fas fa-phone-alt"></i> +1 849 268 6519</p>
-            <div class="redes-sociales">
-                <i class="fab fa-facebook-square"></i>
-                <i class="fab fa-twitter-square"></i>
-                <i class="fab fa-instagram"></i>
-            </div>
-        </div>
-    </div> <!-- Cierre de contenedor de contacto -->
-    
-    <!-- Cierre del body y html -->
-    </body>
-    </html>
-    
-            
-        </form>
-    </div>
-    <div class="pie-pagina ">
-        <div class="contenedor-piepagina contenedor">
-            <div class="info">
-                <h3>Dirección</h3>
-                <p>Bavaro punta cana</p>
-            </div>
-            <div class="info">
-                <h3>Días especiales</h3>
-                <p>Sabados y Domingo 6am - 2pm</p>
-                <p>+1 849-268-6519</p>
-            </div>
-            <div class="info">
-                <h3>Horarios</h3>
-                <p>Lunes - Domingo 6am - 8pm</p>
-                <div class="redes-sociales redes-pie">
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fab fa-twitter-square"></i>
-                    <i class="fab fa-instagram"></i>
+    // Botón "Tours" muestra solo los platos de clase "tours"
+    document.querySelector('.tours').addEventListener('click', () => {
+        mostrarPlatos('.tours');
+    });
+</script>
+
+<!-- Se

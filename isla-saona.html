@@ -6,14 +6,31 @@
     <title>Catálogo de Producto</title>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
+         /* Asegura que el contenido ocupe al menos el 100% de la altura de la ventana */
+         body {
             font-family: 'Mulish', sans-serif;
             margin: 0;
             background-color: #f4f4f4;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            background-image: url('assets/img/saona3.webp'); /* Imagen de fondo */
+            background-size: cover; /* La imagen cubre toda la pantalla */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* La imagen no se repite */
         }
+
+        /* El contenedor principal (header + main) debe ocupar todo el espacio disponible */
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            flex-grow: 1; /* Esto asegura que el contenido se expanda para llenar el espacio disponible */
+        }
+
+        /* Estilo del encabezado */
         header {
             background-color: #00A8E8;
             color: white;
@@ -21,6 +38,7 @@
             padding: 20px;
             position: relative;
         }
+
         /* Botón de regreso */
         .btn-regresar {
             position: absolute;
@@ -32,13 +50,8 @@
             color: white;
             cursor: pointer;
         }
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
+
+        /* Estilo de las tarjetas de productos */
         .producto-card {
             background: white;
             border-radius: 8px;
@@ -49,26 +62,32 @@
             text-align: center;
             transition: transform 0.3s ease;
         }
+
         .producto-card:hover {
             transform: translateY(-10px);
         }
+
         .producto-card img {
             width: 100%;
             border-radius: 8px;
             height: auto;
         }
+
         .producto-card h3 {
             margin: 15px 0;
         }
+
         .producto-card p {
             color: #777;
             font-size: 1rem;
         }
+
         .producto-card .precio {
             font-size: 1.2rem;
             font-weight: bold;
             margin-top: 10px;
         }
+
         .btn-reservar {
             display: inline-block;
             padding: 12px 25px;
@@ -80,14 +99,18 @@
             margin-top: 20px;
             transition: background-color 0.3s;
         }
+
         .btn-reservar:hover {
             background-color: #128c7e;
         }
+
+        /* Estilo del footer */
         footer {
             text-align: center;
             padding: 15px;
             background-color: #333;
             color: white;
+            margin-top: auto; /* Esto asegura que el footer se mantenga abajo */
         }
     </style>
 </head>
