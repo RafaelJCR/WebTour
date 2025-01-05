@@ -1,149 +1,114 @@
 <!DOCTYPE html>
-<title>Ristorante Italiano</title>
-<script src="https://kit.fontawesome.com/283335a286.js" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Mulish:wght@400;700&display=swap"
-    rel="stylesheet">
-<link rel="stylesheet" href="css/normalize.css">
-<link rel="stylesheet" href="css/estilos.css">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excursiones Caribe</title>
+    <script src="https://kit.fontawesome.com/283335a286.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        /* Estilos para el menú y el botón de cierre */
+        #menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 70%; /* Ocupa toda la altura de la ventana */
+            background-color: #06070a;
+            color: white;
+            padding: 20px;
+            z-index: 1000;
+           
+        }
+
+        #menu a {
+            display: block;
+            color: white;
+            margin: 20px 0;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        #menu a:hover {
+            color: #faf7f8;
+        }
+
+        #menu-icon {
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1000;
+            top: 20px;
+            left: 20px;
+        }
+
+        #close-btn {
+            font-size: 30px;
+            cursor: pointer;
+       
+            top: 20px;
+            right: 20px;
+        }
+
+        /* Asegura que el cuerpo no se mueva mientras el menú está visible */
+        body.menu-active {
+            overflow: hidden;
+        }
+    </style>
 </head>
-
 <body>
-<header class="encabezado">
-    <div class="contenedor-navegacion">
-        <div class="contenido-navegacion contenedor">
-            <div class="logo">
-                <h2 style="white-space: nowrap;">
-                    <span style="color: #FFFFFF;">excursiones</span>
-                    <span style="color: #0033A0;">car</span>
-                    <span style="color: #FFFFFF;">ibe</span>
-                    <span style="color: #D50032;">ños</span>
-                </h2>
-            </div>
-    
-        </style>
-  
-    </head>
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Menú con botón de Cerrar</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="menu-container">
-            <!-- Menú que aparece en la pantalla -->
-            <span id="menu-icon">☰</span>
-            <div id="menu">
-                <!-- Botón de cierre -->
-                <span id="close-btn" class="close-btn">&times;</span>
-                <a href="sobre-nosotros.html">Sobre Nosotros</a><br>
-                <!-- Puedes agregar más enlaces aquí -->
-            </div>
-        </div>
-    
-        <script>
-            const menuIcon = document.getElementById('menu-icon');
-            const menu = document.getElementById('menu');
-            const closeBtn = document.getElementById('close-btn');
-    
-            // Mostrar el menú al hacer clic en el icono
-            menuIcon.addEventListener('click', () => {
-                menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
-            });
-    
-            // Cerrar el menú al hacer clic en la "X"
-            closeBtn.addEventListener('click', () => {
-                menu.style.display = 'none';
-            });
-        </script>
-    </body>
-    </html>
-    
-    
-        </script>
-  
-    </body>
-    </html>
-    </header>
-                
-                <hr class="decoracion-video"> <!-- Línea decorativa -->
 
-                <video autoplay loop muted>
-                    <source src="assets/img/videopagina1 (1) (1) (1).mp4">
-                </video>
+    <header class="encabezado">
+        <div class="contenedor-navegacion">
+            <div class="contenido-navegacion contenedor">
+                <div class="logo">
+                    <h2 style="white-space: nowrap;">
+                        <span style="color: #FFFFFF;">excursiones</span>
+                        <span style="color: #0033A0;">car</span>
+                        <span style="color: #FFFFFF;">ibe</span>
+                        <span style="color: #D50032;">ños</span>
+                    </h2>
+                </div>
                 
-                <hr class="decoracion-video"> <!-- Línea decorativa -->
+                <!-- Menú y botón de hamburguesa -->
+                <div class="menu-container">
+                    <span id="menu-icon">☰</span>
+                    <div id="menu">
+                        <span id="close-btn" class="close-btn">&times;</span>
+                        <a href="sobre-nosotros.html">Sobre Nosotros</a>
+                        <!-- Puedes agregar más enlaces aquí -->
+                    </div>
+                </div>
             </div>
         </div>
     </header>
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Excursiones Caribe</title>
-        <link rel="stylesheet" href="css/estilos.css">
-        <style>
-            /* Estilo general para los contenedores */
-            .contenedor-nosotros {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 20px;
-            }
-    
-            .imagenes-nosotros {
-                display: flex;
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-    
-            .imagen1 img, .imagenes2 img {
-                max-width: 100%;
-                height: auto;
-                border-radius: 8px;
-                object-fit: cover; /* Asegura que la imagen cubra su contenedor */
-            }
-    
-            /* Estilos para los platillos */
-            .platillos {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: center; /* Centra los elementos */
-            }
-    
-            .platilloos, .platilloo {
-                width: 300px; /* Ajusta el tamaño de cada contenedor */
-                text-align: center;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                padding: 10px;
-                box-sizing: border-box;
-            }
-    
-            img {
-                width: 100%; /* Asegura que las imágenes cubran el contenedor */
-                height: auto;
-                border-radius: 5px;
-                object-fit: cover;
-            }
-    
-            .btn {
-                padding: 10px 20px;
-                border: none;
-                cursor: pointer;
-                margin: 5px;
-                font-size: 16px;
-            }
-    
-            .hidden {
-                display: none;
-            }
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const menu = document.getElementById('menu');
+        const closeBtn = document.getElementById('close-btn');
+        const body = document.body;
+
+        // Mostrar el menú al hacer clic en el icono
+        menuIcon.addEventListener('click', () => {
+            menu.style.display = 'block';
+            body.classList.add('menu-active'); // Desactiva el desplazamiento del cuerpo
+        });
+
+        // Cerrar el menú al hacer clic en la "X"
+        closeBtn.addEventListener('click', () => {
+            menu.style.display = 'none';
+            body.classList.remove('menu-active'); // Vuelve a habilitar el desplazamiento del cuerpo
+        });
+    </script>
+
+</body>
+</html>
+
         </style>
     </head>
     <body>
