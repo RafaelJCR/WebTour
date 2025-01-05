@@ -1,55 +1,41 @@
 <!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ristorante Italiano</title>
-    <script src="https://kit.fontawesome.com/283335a286.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Mulish:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/estilos.css">
+<title>Ristorante Italiano</title>
+<script src="https://kit.fontawesome.com/283335a286.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Mulish:wght@400;700&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <header class="encabezado">
-        <div class="contenedor-navegacion">
-            <div class="contenido-navegacion contenedor">
-                <div class="logo">
-                    <h2 style="white-space: nowrap;">
-                        <span style="color: #FFFFFF;">excursiones</span>
-                        <span style="color: #0033A0;">car</span>
-                        <span style="color: #FFFFFF;">ibe</span>
-                        <span style="color: #D50032;">ños</span>
-                      </h2>
-
-
-
-                      
-                    
-                </nav>
-                <div class="hamburguesa">
-                    <span></span><span></span><span></span>
-                </div>
+<header class="encabezado">
+    <div class="contenedor-navegacion">
+        <div class="contenido-navegacion contenedor">
+            <div class="logo">
+                <h2 style="white-space: nowrap;">
+                    <span style="color: #FFFFFF;">excursiones</span>
+                    <span style="color: #0033A0;">car</span>
+                    <span style="color: #FFFFFF;">ibe</span>
+                    <span style="color: #D50032;">ños</span>
+                </h2>
             </div>
+
+            <!-- Contenedor del menú -->
+            <nav>
+                <!-- Elemento "details" que actúa como el botón hamburguesa -->
+                <details>
+                    <summary>☰</summary> <!-- Este es el icono del boton -->
+                    <div class="navegacion">
+                        <a href="sobre-nosotros.html">Sobre Nosotros / Contacto</a>
+                    </div>
+                </details>
+            </nav>
+
         </div>
-        <div class="contenido-header">
-            <div class="contenedor-encabezado">
-                <div class="texto-encabezado">
-                    
-                    <h2>¡Bienvenidos!</h2>
-                
-                    <a href="#" class="btn bordes">Il mostrar menú</a>
-
-                    <nav class="navegacion ocultar">
-
-                        <a href="sobre-nosotros.html">Sobre Nosotros / Contacto </a>
-         
-                </div>
+    </div>
+    </header>
                 
                 <hr class="decoracion-video"> <!-- Línea decorativa -->
 
@@ -151,9 +137,11 @@
         <!-- Botones para filtrar -->
         <div>
             <div class="imagenes-nosotros"></div>
-            <button class="todos btn" style="background-color: #00A8E8; color: white;">Todos</button>
+            <button class="todos btn" style="background-color: #00A8E8; color: white;">all</button>
             <button class="buggys btn" style="background-color: #00A8E8; color: white;">Buggys</button>
             <button class="Island btn" style="background-color: #00A8E8; color: white;">Isla</button>
+            <button class="tours btn" style="background-color: #00A8E8; color: white;">tours</button>
+
         </div>
     
    <!-- Contenedor de platillos (todos dentro de una misma clase) -->
@@ -220,13 +208,70 @@
 
     <div class="platilloos Island">
         <a href="saona-island-excursion-private-boat-from-10-to-60-people-all-incluided.html">
-            <img src="assets/img/Isla-Catalina2.jpg" alt="isla-catalina-and-snorkel">
+            <img src="assets/img/WhatsApp-Image-2024-02-25-at-6.30.01-PM-scaled-e1708913739654 (2).jpeg" alt="isla-catalina-and-snorkel">
         </a>
         <h2><a href="saona-island-excursion-private-boat-from-10-to-60-people-all-incluided.html">saona island excursion private boat from 10 to 60 people-all incluided</a></h2>
         <p>Disfruta de las aguas cristalinas en Catalina.</p>
     </div>
-
+    <div class="platilloos tours">
+        <a href="samana Cayo LEVANTADO Y CASCADA EL LIMON FROM PUNTACANA.html">
+            <img src="assets/img/d6b8a9df-cbd0-461a-90b5-f7a9e87c8240.avif" alt="samana Cayo LEVANTADO Y CASCADA EL LIMON FROM PUNTACANA">
+        </a>
+        <h2><a href="samana Cayo LEVANTADO Y CASCADA EL LIMON FROM PUNTACANA.html">samana Cayo LEVANTADO Y CASCADA EL LIMON FROM PUNTACANA</a></h2>
+        <p>Disfruta de samana Cayo LEVANTADO Y CASCADA EL LIMON FROM PUNTACANA.</p>
+    </div>
+    <div class="platilloos tours">
+        <a href="HIGUEY CITY TOUR PRIVATE.html">
+            <img src="assets/img/Basílica-de-Nuestra-Señora-de-la-Altagracia-672x372-1.jpg" alt="isla-catalina-and-snorkel">
+        </a>
+        <h2><a href="HIGUEY CITY TOUR PRIVATE.html">HIGUEY CITY TOUR PRIVATE</a></h2>
+        <p>HIGUEY CITY TOUR PRIVATE.</p>
+    </div>
+    <div class="platilloos tours">
+        <a href="Santo Domingo.html">
+            <img src="assets/img/santo-domingo-tour-1.jpg" alt="Santo Domingo">
+        </a>
+        <h2><a href="Santo Domingo.html">Santo Domingo</a></h2>
+        <p>Santo Domingo.</p>
+    </div>
+    <div class="platilloos tours">
+        <a href="delfines.html">
+            <img src="assets/img/638-2.jpg" alt="delfines">
+        </a>
+        <h2><a href="delfines.html">Delfines</a></h2>
+        <p>delfines.</p>
+    </div>
+    <div class="platilloos tours">
+        <a href="Hacienda park.html">
+            <img src="assets/img/telesilla-hacienda-park.webp" alt="Hacienda park">
+        </a>
+        <h2><a href="Hacienda park.html">Hacienda park</a></h2>
+        <p>Hacienda park.</p>
+    </div>
+    <div class="platilloos tours">
+        <a href="Coco bongo.html">
+            <img src="assets/img/photographed-alain-strassberg.jpg" alt="Coco bongo">
+        </a>
+        <h2><a href="Coco bongo.html">Coco bongo </a></h2>
+        <p>Coco bongo.</p>
+    </div>
+    <div class="platilloos tours">
+        <a href="SHOPPING.html">
+            <img src="assets/img/Mercado-Modelo-@conoce_rd-edited-scaled.jpg" alt="SHOPPING">
+        </a>
+        <h2><a href="SHOPPING.html">SHOPPING </a></h2>
+        <p>SHOPPING.</p>
+    </div>
+    <div class="platilloos tours">
+        <a href="LOS HAITISES.html">
+            <img src="assets/img/Parque-Nacional-Los-Haitises.webp" alt="los haitises">
+        </a>
+        <h2><a href="los haitises.html">los haitises </a></h2>
+        <p>los haitises.</p>
+    
 </div>
+
+
 
 
         <script>
@@ -253,8 +298,13 @@
             document.querySelector('.islands').addEventListener('click', () => {
                 mostrarPlatos('.Island');
             });
+                  // Botón "Island" muestra solo los platos de clase "Island"
+                  document.querySelector('.tours').addEventListener('click', () => {
+                mostrarPlatos('.tours');
+            });
         </script>
         
+     
     
 
     
@@ -283,6 +333,10 @@
         // Botón "Island" muestra solo los platos de clase "Island"
         document.querySelector('.Island').addEventListener('click', () => {
             mostrarPlatos('.Island');
+        });
+           // Botón "Island" muestra solo los platos de clase "Island"
+           document.querySelector('.tours').addEventListener('click', () => {
+            mostrarPlatos('.tours');
         });
     </script>
     
