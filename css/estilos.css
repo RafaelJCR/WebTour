@@ -817,3 +817,47 @@ html[lang="es"] {
 body {
     color: black !important;
 }
+
+  button.btn {
+    background-color: #00A8E8;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    gap: 10px; /* Espacio entre los botones */
+
+  }
+  /* Estilo base de los botones */
+button.btn {
+    background-color: #00A8E8;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transiciones suaves */
+  }
+  
+  /* Efecto hover para más profundidad */
+  button.btn:hover {
+    transform: translateY(-2px); /* Eleva el botón */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Más sombra */
+  }
+  
+  /* Efecto activo */
+  button.btn:active {
+    transform: translateY(1px); /* Presiona el botón */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Menos sombra */
+  }
+  
+  .decoracion-video {
+    border: none; /* Elimina el borde predeterminado */
+    height: 15px; /* Ajusta el grosor */
+    background-color: #00A8E8; /* Color de la línea */
+    width: 100%; /* Ancho completo */
+    margin: 1px 0; /* Espaciado arriba y abajo */
+    border-radius: 4px; /* Opcional: bordes redondeados */
+  }
+  

@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/estilos.css">
     <style>
+        
+
+
+
         /* Estilos para el menú y el botón de cierre */
         #menu {
             display: none;
@@ -62,7 +66,7 @@ html[lang="es"] {
             cursor: pointer;
             z-index: 1000;
             top: 20px;
-            left: 20px;
+            left: 1px;
         }
 
         #close-btn {
@@ -131,6 +135,19 @@ html[lang="es"] {
         </style>
     </head>
     <body>
+    </div>
+                
+    <hr class="decoracion-video"> <!-- Línea decorativa -->
+
+    <video autoplay loop muted>
+        <p class="bienvenida">Bienvenido a!</p>
+
+        <source src="assets/img/videopagina1 (1) (1) (1).mp4">
+    </video>
+    
+    
+    <hr class="decoracion-video"> <!-- Línea decorativa -->
+</div>
     
         <!-- Sección Nosotros -->
         <div class="contenedor-nosotros contenedor">
@@ -152,6 +169,40 @@ html[lang="es"] {
         </div>
     
         <!-- Botones para filtrar -->
+        <style>
+        
+    
+            /* Contenedor de los botones */
+            .botones-container {
+                text-align: center;
+            }
+    
+            /* Estilos generales para los botones */
+            .btn {
+                background-color: #00A8E8;
+                color: white;
+                padding: 10px 20px;
+                margin: 5px;
+                border: 2px solid #0074B7; /* Borde con un color más oscuro */
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* Sombra para el relieve */
+            }
+    
+            /* Efecto hover */
+            .btn:hover {
+                background-color: #0074B7;
+                box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3), inset 2px 2px 5px rgba(255, 255, 255, 0.2); /* Sombra más pronunciada */
+            }
+    
+            /* Efecto cuando se presiona */
+            .btn:active {
+                transform: translateY(2px); /* Simula el efecto de presión */
+                box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.3); /* Relieve invertido */
+            }
+        </style>
         <div>
             
             <div class="imagenes-nosotros"></div>
