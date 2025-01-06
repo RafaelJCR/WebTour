@@ -49,7 +49,7 @@
     top: 50px; /* Ajusta la posición para que esté justo debajo del icono */
     left: 50px; /* Asegura que la ventana se muestre al lado del ícono */
     width: 300px; /* Define el ancho del modal */
-    background-color: rgba(170, 54, 54, 0.7); /* Fondo oscuro con opacidad */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
 }
 
 .modal-content {
@@ -807,4 +807,13 @@ footer {
     .platilloos, .platilloo {
         max-width: 100%;
     }
+}
+
+html[lang="es"] {
+    color: red;
+}
+
+/* Asegúrate de que el color del texto no cambie al cambiar de idioma */
+body {
+    color: black !important;
 }

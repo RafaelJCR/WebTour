@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <head>
+        <style>
+            /* Asegúrate de que el color del texto no cambie al cambiar de idioma */
+            body {
+                color: black !important;
+            }
+        </style>
+    </head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excursiones Caribe</title>
@@ -18,13 +27,23 @@
             top: 0;
             right: 0;
             width: 250px;
-            height: 70%; /* Ocupa toda la altura de la ventana */
+            height: 80%; /* Ocupa toda la altura de la ventana */
             background-color: #06070a;
             color: white;
             padding: 20px;
             z-index: 1000;
            
-        }
+        } 
+/*         
+        funcionLIDAD DE LOS BOTONES DE BUSCAR IMPORTANTE  */
+        .hidden {
+    display: none;
+}
+html[lang="es"] {
+    color: red;
+}
+
+
 
         #menu a {
             display: block;
@@ -134,6 +153,7 @@
     
         <!-- Botones para filtrar -->
         <div>
+            
             <div class="imagenes-nosotros"></div>
             <button class="todos btn" style="background-color: #00A8E8; color: white;">all</button>
             <button class="buggys btn" style="background-color: #00A8E8; color: white;">Buggys</button>
@@ -271,36 +291,38 @@
 
 
 
+<script>
+    
+    // Función para mostrar los diferentes platillos
+    function mostrarPlatos(clase) {
+        const todosPlatillos = document.querySelectorAll('.platilloo, .platilloos');
+        todosPlatillos.forEach(platillo => platillo.classList.add('hidden')); // Ocultar todos
+        const seleccionados = document.querySelectorAll(clase);
+        seleccionados.forEach(platillo => platillo.classList.remove('hidden')); // Mostrar seleccionados
+    }
 
-        <script>
-            // Función para mostrar los diferentes platillos
-            function mostrarPlatos(clase) {
-                const todosPlatillos = document.querySelectorAll('.platilloo, .platilloos');
-                todosPlatillos.forEach(platillo => platillo.classList.add('hidden')); // Ocultar todos
-                const seleccionados = document.querySelectorAll(clase);
-                seleccionados.forEach(platillo => platillo.classList.remove('hidden')); // Mostrar seleccionados
-            }
-        
-            // Botón "Todos" muestra todos los platos
-            document.querySelector('.todos').addEventListener('click', () => {
-                const todosPlatillos = document.querySelectorAll('.platilloo, .platilloos');
-                todosPlatillos.forEach(platillo => platillo.classList.remove('hidden')); // Mostrar todos
-            });
-        
-            // Botón "Buggys" muestra solo los platos de clase "buggy"
-            document.querySelector('.buggys').addEventListener('click', () => {
-                mostrarPlatos('.buggy');
-            });
-        
-            // Botón "Island" muestra solo los platos de clase "Island"
-            document.querySelector('.islands').addEventListener('click', () => {
-                mostrarPlatos('.Island');
-            });
-                  // Botón "Island" muestra solo los platos de clase "Island"
-                  document.querySelector('.tours').addEventListener('click', () => {
-                mostrarPlatos('.tours');
-            });
-        </script>
+    // Botón "Todos" muestra todos los platos
+    document.querySelector('.todos').addEventListener('click', () => {
+        const todosPlatillos = document.querySelectorAll('.platilloo, .platilloos');
+        todosPlatillos.forEach(platillo => platillo.classList.remove('hidden')); // Mostrar todos
+    });
+
+    // Botón "Buggys" muestra solo los platos de clase "buggy"
+    document.querySelector('.buggys').addEventListener('click', () => {
+        mostrarPlatos('.platilloo.buggy');
+    });
+
+    // Botón "Island" muestra solo los platos de clase "Island"
+    document.querySelector('.Island').addEventListener('click', () => {
+        mostrarPlatos('.platilloos.Island');
+    });
+
+    // Botón "Tours" muestra solo los platos de clase "tours"
+    document.querySelector('.tours').addEventListener('click', () => {
+        mostrarPlatos('.platilloos.tours');
+    });
+</script>
+
         
      
     
@@ -337,59 +359,70 @@
             mostrarPlatos('.tours');
         });
     </script>
-    
-    <!-- Sección del chef -->
-    <section class="chef contenedor">
-        <h2>Chef ejecutivo</h2>
-        <div class="contenido-chef">
-            <div class="texto-chef">
-                <h3>La excelencia está en la diversidad y el modo de progresar es conocer y comparar las diversidades de productos, culturas y técnicas</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus corporis dolores eveniet vitae, natus tempora recusandae hic laborum error ducimus repellat, laudantium temporibus tenetur totam sint consequuntur eligendi! Asperiores, ad.</p>
-                <a href="#" class="btn btn-azul">Leer Biografía</a>
-            </div>
-            <div class="imagen-chef">
-                <img src="assets/img/chef.webp" alt="fotografía del chef">
-            </div>
-        </div>
-    </section>
-    
-    <!-- Sección de formulario de contacto -->
-    <div class="formulario-contacto contenedor">
-        <div class="informacion-contacto">
-            <h3>Contáctanos</h3>
-            <p><i class="fas fa-map-marker-alt"></i> Punta Cana, Bávaro</p>
-            <p><i class="fas fa-envelope"></i> excursionescaribe@gmail.com</p>
-            <p><i class="fas fa-phone-alt"></i> +1 849 268 6519</p>
-            <div class="redes-sociales">
-                <i class="fab fa-facebook-square"></i>
-                <i class="fab fa-twitter-square"></i>
-                <i class="fab fa-instagram"></i>
-            </div>
-        </div>
-    </div> <!-- Cierre de contenedor de contacto -->
-    
-    <!-- Cierre del body y html -->
-    </body>
-    </html>
-    
-            
-        </form>
+<section id="ultima-seccion" style="background-color: #f4f4f9; padding: 50px 20px;">
+    <div class="container" style="text-align: center;">
+        <h2 class="animado" style="font-size: 40px; font-weight: bold;">
+            <span style="color: #0033A0;">¡</span>
+
+            <span style="color: #0712ed; text-shadow: 2px 2px 4px black;">!Tu próxima </span>
+
+
+            <span style="color: #FFFFFF; text-shadow: 2px 2px 4px black;"> aventura</span>
+
+            <span style="color: #e90a0a; text-shadow: 2px 2px 4px black;">te esta esperando!</span>
+
+
+        </h2>
     </div>
-    <div class="pie-pagina ">
-        <div class="contenedor-piepagina contenedor">
-            <div class="info">
-                <h3>Dirección</h3>
-                <p>Bavaro punta cana</p>
-            </div>
-            <div class="info">
-                <h3>Días especiales</h3>
-                <p>Sabados y Domingo 6am - 2pm</p>
-                <p>+1 849-268-6519</p>
-            </div>
-            <div class="info">
-                <h3>Horarios</h3>
-                <p>Lunes - Domingo 6am - 8pm</p>
-                <div class="redes-sociales redes-pie">
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fab fa-twitter-square"></i>
-                    <i class="fab fa-instagram"></i>
+    
+</section>
+
+        </h2>
+        <p class="animado" style="font-size: 20px; color: #555; margin: 20px 0; line-height: 1.6;">
+            Explora paisajes impresionantes, disfruta de momentos únicos y crea recuerdos que durarán toda la vida. Con nuestras excursiones, cada paso será un descubrimiento. Ya sea que busques una caminata por las montañas, un paseo por la playa o un recorrido cultural, tenemos la experiencia perfecta para ti.
+        </p>
+
+        <!-- Mapa de la República Dominicana -->
+        <h3 class="animado" style="font-size: 28px; font-weight: bold; margin-top: 40px;">
+            <span style="color: #0033A0;">Ubicación</span> de nuestras excursiones
+        </h3>
+        <div style="position: relative; width: 100%; height: 400px; margin-top: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.205579122922!2d-69.92538018467589!3d18.479076421157656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf92b205f3b075%3A0x6f05f9e963e8bb52!2sSanto%20Domingo%2C%20Rep%C3%BAblica%20Dominicana!5e0!3m2!1ses-419!2sus!4v1672828931801!5m2!1ses-419!2sus" 
+                    width="100%" height="100%" style="border: 0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <p class="animado" style="font-size: 18px; color: #555; margin-top: 20px;">
+            Haz clic en el mapa para obtener más información o ver más rutas. ¡Descubre la belleza de la República Dominicana con nosotros!
+        </p>
+
+   <!-- Botón de reserva -->
+<div style="text-align: center;">
+    <a href="https://wa.me/34612345678?text=Hola%2C%20estoy%20interesado%20en%20reservar%20una%20excursi%C3%B3n%20con%20ustedes.%20%3A)" 
+       class="animado"
+       style="display: inline-block; padding: 20px 40px; background-color: #d43f3a; color: white; font-size: 20px; font-weight: bold; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease; margin-top: 30px;">
+        Reserva tu excursión ahora
+    </a>
+</div>
+
+    <!-- Galería de imágenes -->
+    <div class="imagenes-excursiones" style="display: flex; justify-content: center; margin-top: 50px; gap: 20px; flex-wrap: wrap;">
+        <div class="animado" style="width: 280px;">
+            <img src="assets/img/creador-mapas-camping-senderismo-o-plan-fogata_409898-160 (1).avif" alt="Excursión en la montaña" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+            <p style="margin-top: 10px; font-size: 16px; color: #777;">Aventura en las montañas: caminatas guiadas por paisajes impresionantes.</p>
+        </div>
+        <div class="animado" style="width: 280px;">
+            <img src="assets/img/pngtree-cartoon-hand-drawn-vector-tool-compass-png-image_2592004.jpg" alt="Excursión en la playa" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+            <p style="margin-top: 10px; font-size: 16px; color: #777;">Paseo por la playa: relájate mientras disfrutas del mar y el sol.</p>
+        </div>
+        <div class="animado" style="width: 280px;">
+            <img src="assets/img/man-climbing-mountain.png" alt="Excursión en el bosque" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+            <p style="margin-top: 10px; font-size: 16px; color: #777;">Exploración en el bosque: conéctate con la naturaleza mientras aprendes sobre flora y fauna local.</p>
+        </div>
+    </div>
+
+    <p style="font-size: 16px; color: #777; margin-top: 40px; text-align: center;">Síguenos en nuestras redes sociales y mantente actualizado sobre nuestras ofertas y nuevas rutas. ¡La aventura nunca termina!</p>
+    <div class="social-media" style="margin-top: 20px; text-align: center;">
+        <a href="https://facebook.com" style="margin: 0 10px; font-size: 24px; color: #3b5998; text-decoration: none;">Facebook</a>
+        <a href="https://instagram.com" style="margin: 0 10px; font-size: 24px; color: #e4405f; text-decoration: none;">Instagram</a>
+        <a href="https://twitter.com" style="margin: 0 10px; font-size: 24px; color: #1da1f2; text-decoration: none;">Twitter</a>
+    </div>
+</section>
