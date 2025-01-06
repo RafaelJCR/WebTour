@@ -85,9 +85,14 @@
     --azul: #00A8E8;
     --blanco: #fff;
     --rojo: #00A8E8;
-    --oscuro: #000;
+    --oscuro: #020108;
     --titulos: 'Arima Madurai', cursive;
     --parrafos: 'Mulish', sans-serif;
+    border-radius: 100px;
+    
+
+  
+    
 }
 
 html {
