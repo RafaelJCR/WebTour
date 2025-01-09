@@ -128,7 +128,7 @@ const limpiarHtml = (contenedor) =>{
 //             const descripcion = platillo.dataset.descripcion;
 
 //             // Redirigir a la página de detalles con parámetros en la URL
-//             window.location.href = `detalle.html?imagen=${encodeURIComponent(imagen)}&titulo=${encodeURIComponent(titulo)}&descripcion=${encodeURIComponent(descripcion)}`;
+//             window.location.href = detalle.html?imagen=${encodeURIComponent(imagen)}&titulo=${encodeURIComponent(titulo)}&descripcion=${encodeURIComponent(descripcion)};
 //         });
 //     });
 // });
@@ -139,7 +139,7 @@ const limpiarHtml = (contenedor) =>{
 //     platillo.addEventListener('click', () => {
 //         // Redirige a la página detalle.html con un parámetro único
 //         const id = index + 1; // Genera un ID único basado en el índice
-//         window.location.href = `detalle.html?id=${id}`;
+//         window.location.href = detalle.html?id=${id};
 //     });
 // });
 
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     platillosElements.forEach((platilloElement, index) => {
         platilloElement.addEventListener('click', () => {
             // Usamos el ID del platillo para redirigir a detalle.html
-            window.location.href = `detalle.html?id=${platillos[index].id}`;
-        });
-    });
+            window.location.href = detalle.html?id=${platillos[index].id};
+        });
+    });
 });
