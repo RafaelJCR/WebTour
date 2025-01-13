@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <head>
-        <style>
+    <style>
             /* Asegúrate de que el color del texto no cambie al cambiar de idioma */
             body {
                 color: black !important;
             }
         </style>
     </head>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('covrm8hjTl7DyCfoi'); // Tu clave pública de EmailJS
+        })();
+    </script>
+    
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Harmony excursions </title>
+
     <script src="https://kit.fontawesome.com/283335a286.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +44,8 @@
             z-index: 1000;
            
         } 
-/*         
+        
+        /*         
         funcionLIDAD DE LOS BOTONES DE BUSCAR IMPORTANTE  */
         .hidden {
     display: none;
@@ -100,7 +107,31 @@ html[lang="es"] {
     
 </head>
 <body>
-
+    <script>
+        const btn = document.getElementById('button');
+    
+        document.getElementById('contactForm')
+            .addEventListener('submit', function(event) {
+                event.preventDefault();
+    
+                btn.textContent = 'Enviando...';
+    
+                const serviceID = 'default_service'; // Reemplaza con tu Service ID si es diferente
+                const templateID = 'template_w3ry1ma'; // Reemplaza con tu Template ID
+    
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        btn.textContent = 'Enviar';
+                        alert('¡Mensaje enviado correctamente!');
+                        document.getElementById('contactForm').reset(); // Limpia el formulario
+                    }, (err) => {
+                        btn.textContent = 'Enviar';
+                        alert('Error al enviar el mensaje. Intenta nuevamente.');
+                        console.error('Error:', err);
+                    });
+            });
+    </script>
+    
     <header class="encabezado">
         <div class="contenedor-navegacion">
             <div class="contenido-navegacion contenedor">
@@ -509,3 +540,4 @@ html[lang="es"] {
         <a href="https://twitter.com" style="margin: 0 10px; font-size: 24px; color: #1da1f2; text-decoration: none;">Twitter / X</a>
     </div>
 </section>
+<script src="js/app.js"
