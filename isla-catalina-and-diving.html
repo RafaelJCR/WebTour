@@ -1,167 +1,218 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Producto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+    <title>Formulario de Compra</title>
     <style>
-         /* Asegura que el contenido ocupe al menos el 100% de la altura de la ventana */
-         body {
-            font-family: 'Mulish', sans-serif;
+        /* Estilo general de la página */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('assets/img/buggys3producto.webp');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
             margin: 0;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background-image: url('assets/img/buceoCatalina2.webp'); /* Imagen de fondo */
-            background-size: cover; /* La imagen cubre toda la pantalla */
-            background-position: center; /* Centra la imagen */
-            background-repeat: no-repeat; /* La imagen no se repite */
+            padding: 0;
+            color: #fff;
         }
 
-        /* El contenedor principal (header + main) debe ocupar todo el espacio disponible */
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            padding: 20px;
-            flex-grow: 1; /* Esto asegura que el contenido se expanda para llenar el espacio disponible */
-        }
-
-        /* Estilo del encabezado */
-        header {
-            background-color: #00A8E8;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
-
-        /* Botón de regreso */
-        .btn-regresar {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 1.5rem;
-            background: transparent;
-            border: none;
-            color: white;
-            cursor: pointer;
-        }
-
-        /* Estilo de las tarjetas de productos */
+        /* Estilo de la tarjeta del producto */
         .producto-card {
-            background: white;
+            max-width: 400px;
+            background-color: rgba(0, 0, 0, 0.616);
+            margin: 50px auto;
+            padding: 17px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            margin: 20px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .producto-card:hover {
-            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .producto-card img {
             width: 100%;
             border-radius: 8px;
-            height: auto;
         }
 
         .producto-card h3 {
-            margin: 15px 0;
+            font-size: 24px;
+            color: #fff ;
+            margin-top: 13px;
         }
 
         .producto-card p {
-            color: #777;
-            font-size: 1rem;
+            font-size: 16px;
+            color: #fff;
+            line-height: 1.6;
+            margin-top: 25px;
         }
 
         .producto-card .precio {
-            font-size: 1.2rem;
+            font-size: 20px;
             font-weight: bold;
-            margin-top: 10px;
+            color: #4CAF50;
+            margin-top: 13px;
         }
 
+        /* Estilo del formulario */
+        form {
+            margin-top: 17px;
+            margin-bottom: 17px;
+        }
+
+        form label {
+            display: block;
+            font-weight: bold;
+            margin-top: 8px;
+            color: #fdf0f0;
+        }
+
+        form input[type="text"],
+        form input[type="number"],
+        form input[type="email"] {
+            width: 95%;
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #ffffff;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 13px;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        /* Estilo del enlace de reserva */
         .btn-reservar {
             display: inline-block;
-            padding: 12px 25px;
-            background-color: #25d366; /* Color de WhatsApp */
+            width: 95%;
+            text-align: center;
+            padding: 10px; /* Aseguramos que el tamaño sea igual al botón de Gmail */
+            background-color: #40c351;
             color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            margin-top: 20px;
-            transition: background-color 0.3s;
+            margin-top: 13px;
         }
 
         .btn-reservar:hover {
-            background-color: #128c7e;
+            background-color: #007bb5;
         }
 
-        /* Estilo del footer */
-        footer {
+        /* Estilo para mostrar el precio final */
+        .precio-final {
+            font-size: 18px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-top: 13px;
             text-align: center;
-            padding: 15px;
-            background-color: #333;
-            color: white;
-            margin-top: auto; /* Esto asegura que el footer se mantenga abajo */
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <!-- Botón de regresar -->
-        <button class="btn-regresar" onclick="window.history.back();">←</button>
-        <h1>Catálogo de Productos</h1>
-    </header>
+    <div class="producto-card">
+        <img src="assets/img/buceoCatalina2.webp" alt="1 PAX">
+        <h3>Aventura en buggys</h3>
+        <p>Embark on an exciting motomaran adventure with included transport for your convenience. Enjoy snorkeling in crystal-clear waters, discovering vibrant marine life. Refresh yourself with a variety of drinks available throughout the journey. Savor a delicious lunch while soaking in the unique surroundings. A knowledgeable guide will accompany you, providing insights about the area, while lively music and entertainment keep the atmosphere fun and festive throughout the experience.</p>
+        <div class="precio">$90</div>
 
-    <main>
-        <div class="producto-card">
-            <img src="assets/img/buceoCatalina1.jpg" alt="Producto 1">
-            <h3>1 PAX</h3>
-            <p>Embark on an exciting motomaran adventure with included transport for your convenience. Enjoy snorkeling in crystal-clear waters, discovering vibrant marine life. Refresh yourself with a variety of drinks available throughout the journey. Savor a delicious lunch while soaking in the unique surroundings. A knowledgeable guide will accompany you, providing insights about the area, while lively music and entertainment keep the atmosphere fun and festive throughout the experience.</p>
-            <div class="precio">$110</div>
-            <a href="https://wa.me/+18092514054?text=¡Me%20interesa%20el%20Producto%201%20y%20quiero%20reservarlo!" class="btn-reservar" target="_blank">
-                BOOKING NOW
-            </a>
-        </div>
+        <!-- Formulario de compra -->
+        <form id="form-compra">
+            <!-- Campo de Nombre -->
+            <label for="nombre"><b>Nombre:</b></label>
+            <input type="text" id="nombre" name="nombre" required>
 
-        <div class="producto-card">
-            <img src="assets/img/buceoCatalina2.webp" alt="Producto 2">
-            <h3>2 PAX</h3>
-            <p>Embark on an exciting motomaran adventure with included transport for your convenience. Enjoy snorkeling in crystal-clear waters, discovering vibrant marine life. Refresh yourself with a variety of drinks available throughout the journey. Savor a delicious lunch while soaking in the unique surroundings. A knowledgeable guide will accompany you, providing insights about the area, while lively music and entertainment keep the atmosphere fun and festive throughout the experience.</p>
-            <div class="precio">$220</div>
-            <a href="https://wa.me/+18092514054?text=¡Me%20interesa%20el%20Producto%201%20y%20quiero%20reservarlo!" class="btn-reservar" target="_blank">
-                BOOKING NOW </a>
-        </div>
+            <!-- Campo de Apellido -->
+            <label for="apellido"><b>Apellido:</b></label>
+            <input type="text" id="apellido" name="apellido" required>
 
-        <div class="producto-card">
-            <img src="assets/img/buceoCatalina3.jpg" alt="Producto 3">
-            <h3>10 PAX</h3>
-            <p>Embark on an exciting motomaran adventure with included transport for your convenience. Enjoy snorkeling in crystal-clear waters, discovering vibrant marine life. Refresh yourself with a variety of drinks available throughout the journey. Savor a delicious lunch while soaking in the unique surroundings. A knowledgeable guide will accompany you, providing insights about the area, while lively music and entertainment keep the atmosphere fun and festive throughout the experience</p>
-            <div class="precio">$1100</div>
-            <a href="https://wa.me/+18092514054?text=¡Me%20interesa%20el%20Producto%201%20y%20quiero%20reservarlo!" class="btn-reservar" target="_blank">
-                BOOKING NOW
-            </a>0
-        </div>
-    </main>
+            <!-- Campo de Correo Electrónico -->
+            <label for="email"><b>Correo Electrónico:</b></label>
+            <input type="email" id="email" name="email" required>
 
-    <footer>
-        <p>© 2024 Mi Tienda Online. Todos los derechos reservados.</p>
-    </footer>
+            <!-- Campo de Hotel -->
+            <label for="hotel"><b>Hotel:</b></label>
+            <input type="text" id="hotel" name="hotel" required>
+
+            <!-- Campo de Cantidad de Niños -->
+            <label for="cantidad_ninos"><b>Cantidad de niños:</b></label>
+            <input type="number" id="cantidad_ninos" name="cantidad_ninos" min="0" value="0" oninput="calcularPrecio()" required>
+            
+            <!-- Campo de Cantidad de Adultos -->
+            <label for="cantidad_adultos"><b>Cantidad de adultos:</b></label>
+            <input type="number" id="cantidad_adultos" name="cantidad_adultos" min="0" value="0" oninput="calcularPrecio()" required>
+
+            <button type="button" id="btn-compra">Booking with Gmail</button>
+        </form>
+
+        <!-- Mostrar precio total -->
+        <div class="precio-final" id="precio-total">Precio Total: $0</div>
+
+        <!-- Botón de reserva -->
+        <a href="https://wa.me/+18092514054?text=¡Me%20interesa%20el%20Producto%201%20y%20quiero%20reservarlo!" class="btn-reservar" id="btn-reservar" target="_blank">
+            BOOKING with WhatsApp
+        </a>
+    </div>
+
+    <script>
+        // Función para calcular el precio total
+        function calcularPrecio() {
+            const precioBase = 100; 
+            const precioAdultoAdicional = 30; 
+            const precioNino = 45; 
+
+            // Obtener los valores de los campos y convertirlos en enteros
+            const cantidadNinos = parseInt(document.getElementById('cantidad_ninos').value) || 0;
+            const cantidadAdultos = parseInt(document.getElementById('cantidad_adultos').value) || 0;
+
+            let precioTotal = 0;
+
+            // Calcular el precio de los adultos
+            if (cantidadAdultos > 0) {
+                precioTotal += precioBase; 
+                if (cantidadAdultos > 1) {
+                    precioTotal += (cantidadAdultos - 1) * precioAdultoAdicional; 
+                }
+            }
+
+            // Calcular el precio de los niños
+            precioTotal += cantidadNinos * precioNino;
+
+            // Mostrar el precio total con dos decimales
+            const precioTotalFormateado = precioTotal.toFixed(2); // Limita a 2 decimales
+            document.getElementById('precio-total').textContent = 'Precio Total: $' + precioTotalFormateado;
+        }
+
+        // Función para generar el enlace de "Realizar compra" con mailto
+        document.getElementById('btn-compra').addEventListener('click', function() {
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            const email = document.getElementById('email').value;
+            const hotel = document.getElementById('hotel').value;
+            const cantidadNinos = document.getElementById('cantidad_ninos').value;
+            const cantidadAdultos = document.getElementById('cantidad_adultos').value;
+            const precioTotal = document.getElementById('precio-total').textContent.split('$')[1];
+
+            const asunto = "Reserva de Producto - Aventura en Buggys";
+            const cuerpo = `Nombre: ${nombre}\nApellido: ${apellido}\nCorreo: ${email}\nHotel: ${hotel}\nCantidad de niños: ${cantidadNinos}\nCantidad de adultos: ${cantidadAdultos}\nPrecio total: $${precioTotal}`;
+
+            window.location.href = `mailto:rcedanorijo@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+        });
+    </script>
 
 </body>
 </html>
-
-
-
-
-
-     
