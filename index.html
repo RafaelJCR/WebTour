@@ -107,6 +107,11 @@ html[lang="es"] {
     
 </head>
 <body>
+      <!-- Burbujita de WhatsApp -->
+      <a href="https://wa.me/18092514054?text=I%20come%20from%20Harmony%20Excursions%20and%20I%20want%20information" target="_blank" class="whatsapp-bubble">
+        <img src="paginas/WhatsApp.svg.webp" alt="WhatsApp">
+  </a>
+
     <script>
         const btn = document.getElementById('button');
     
@@ -223,7 +228,29 @@ html[lang="es"] {
         <!-- Botones para filtrar -->
         <style>
         
-    
+    /* Estilos para la burbujita de WhatsApp */
+.whatsapp-bubble {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  border-radius: 50%;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-bubble:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-bubble img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
             /* Contenedor de los botones */
             .botones-container {
                 text-align: center;
