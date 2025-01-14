@@ -131,7 +131,7 @@
         }
 
         .btn-gmail {
-            background-color: #007bb5; /* Color específico para Gmail */
+            background-color: #D44638; /* Color específico para Gmail */
         }
 
         .btn-reservar:hover {
@@ -204,11 +204,15 @@
 
     <script>
         function calcularPrecio() {
-            var cantidadAdultos = document.getElementById("cantidad_adultos").value;
-            var cantidadNinos = document.getElementById("cantidad_ninos").value;
+            var cantidadAdultos = document.getElementById("cantidad_adultos").value || 0; // Asegurarse que sea un número
+            var cantidadNinos = document.getElementById("cantidad_ninos").value || 0; // Asegurarse que sea un número
             var precioPorAdulto = 90; // Precio por adulto
+            var precioPorNino = 30;  // Precio por niño
 
-            var precioTotal = (parseInt(cantidadAdultos) * precioPorAdulto) + (parseInt(cantidadNinos) * 0); // Precio por niño es 0
+            // Calcular el precio total
+            var precioTotal = (parseInt(cantidadAdultos) * precioPorAdulto) + (parseInt(cantidadNinos) * precioPorNino);
+            
+            // Actualizar el precio total
             document.getElementById("precio-total").textContent = "Precio Total: $" + precioTotal;
         }
 
@@ -243,7 +247,7 @@
             btnWhatsApp.style.display = "inline-block"; // Mostrar el enlace de WhatsApp
 
             // Crear el enlace para Gmail
-            var enlaceGmail = "mailto:Algenisecedeno147@outlook.com.com?subject=Reserva%20de%20Producto%20Buggy&body=" + mensajeCodificado;
+            var enlaceGmail = "mailto:example@example.com?subject=Reserva%20de%20Producto%20Buggy&body=" + mensajeCodificado;
             
             // Mostrar el enlace de Gmail
             var btnGmail = document.getElementById("btn-reservar-gmail");
