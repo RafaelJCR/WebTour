@@ -8,7 +8,7 @@
         /* Estilo general de la página */
         body {
             font-family: Arial, sans-serif;
-            background-image: url('assets/img/buggys3producto.webp');
+            background-image: url('assets/img/catalina3.jpg');
             background-size: cover;
             background-position: center center;
             background-attachment: fixed;
@@ -154,8 +154,8 @@
     <a href="javascript:history.back()" class="btn-regresar">Regresar</a>
 
     <div class="producto-card">
-        <img src="assets/img/buggys1producto.webp" alt="1 PAX">
-        <h3>Aventura en buggys</h3>
+        <img src="assets/img/Isla-Catalina2.jpg" alt="1 PAX">
+        <h3>Catalina Island</h3>
         <p>Get ready for an exhilarating Polaris adventure through the diverse terrains of the Dominican Republic. Hop into a powerful Polaris vehicle and navigate through rugged trails, lush forests, and scenic landscapes. Your expert guide will lead you through exciting off-road paths, crossing rivers and exploring hidden gems of nature. This off-road adventure offers a thrilling experience while immersing you in the island's beauty, perfect for adrenaline seekers and nature lovers alike. Discover the Dominican Republic in an entirely new way with this unforgettable Polaris experience.</p>
         <div class="precio">$90</div>
 
@@ -177,13 +177,13 @@
             <label for="hotel"><b>Hotel:</b></label>
             <input type="text" id="hotel" name="hotel" required>
 
-            <!-- Campo de Cantidad de Niños -->
-            <label for="cantidad_ninos"><b>Cantidad de niños:</b></label>
-            <input type="number" id="cantidad_ninos" name="cantidad_ninos" min="0" value="0" oninput="calcularPrecio()" required>
-            
-            <!-- Campo de Cantidad de Adultos -->
-            <label for="cantidad_adultos"><b>Cantidad de adultos:</b></label>
-            <input type="number" id="cantidad_adultos" name="cantidad_adultos" min="0" value="0" oninput="calcularPrecio()" required>
+       <!-- Campo de Cantidad de Niños -->
+       <label for="cantidad_ninos"><b>(Children 6 and 8 years old) Number of children::</b></label>
+       <input type="number" id="cantidad_ninos" name="cantidad_ninos" min="0" value="0" oninput="calcularPrecio()" required>
+       
+       <!-- Campo de Cantidad de Adultos -->
+       <label for="cantidad_adultos"><b>Number of adults:</b></label>
+       <input type="number" id="cantidad_adultos" name="cantidad_adultos" min="0" value="0" oninput="calcularPrecio()" required>
 
             <button type="button" id="btn-compra" onclick="generarEnlaceWhatsApp()">Booking</button>
         </form>
@@ -204,26 +204,28 @@
 
     <script>
         function calcularPrecio() {
-            var cantidadAdultos = document.getElementById("cantidad_adultos").value || 0; 
-            var cantidadNinos = document.getElementById("cantidad_ninos").value || 0; 
-            var precioPorAdulto = 60; /
-            var precioPorNino = 30;  
-            var precioAdicional = 20; 
-
-           
-            var precioTotal = (parseInt(cantidadAdultos) * precioPorAdulto) + (parseInt(cantidadNinos) * precioPorNino);
+            // Asegurarse de que los valores sean números
+            var cantidadAdultos = parseInt(document.getElementById("cantidad_adultos").value) || 0; 
+            var cantidadNinos = parseInt(document.getElementById("cantidad_ninos").value) || 0; 
             
-           
+            var precioPorAdulto = 60;  // Precio por adulto
+            var precioPorNino = 30;    // Precio por niño
+            var precioAdicional = 60;  // Precio adicional (solo se agrega si hay más de 1 adulto o niño)
+
+            // Calcular el precio base
+            var precioTotal = (cantidadAdultos * precioPorAdulto) + (cantidadNinos * precioPorNino);
+            
+            // Sumar precio adicional solo si hay más de 1 adulto o más de 1 niño
             if (cantidadAdultos > 1 || cantidadNinos > 1) {
                 precioTotal += precioAdicional;
             }
 
-          
+            // Actualizar el precio total en la página
             document.getElementById("precio-total").textContent = "Precio Total: $" + precioTotal;
         }
 
         function generarEnlaceWhatsApp() {
-          
+            // Obtener los valores del formulario
             var nombre = document.getElementById("nombre").value;
             var apellido = document.getElementById("apellido").value;
             var email = document.getElementById("email").value;

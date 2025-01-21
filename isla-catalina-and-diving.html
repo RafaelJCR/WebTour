@@ -9,7 +9,7 @@
         /* Estilo general de la página */
         body {
             font-family: Arial, sans-serif;
-            background-image: url('assets/img/buggys3producto.webp');
+            background-image: url('assets/img/buceoCatalina2.webp');
             background-size: cover;
             background-position: center center;
             background-attachment: fixed;
@@ -125,10 +125,10 @@
 <body>
 
     <div class="producto-card">
-        <img src="assets/img/buceoCatalina2.webp" alt="1 PAX">
-        <h3>Aventura en buggys</h3>
+        <img src="assets/img/buceoCatalina3.jpg" alt="1 PAX">
+        <h3>Catalina Diving</h3>
         <p>Embark on an exciting motomaran adventure with included transport for your convenience. Enjoy snorkeling in crystal-clear waters, discovering vibrant marine life. Refresh yourself with a variety of drinks available throughout the journey. Savor a delicious lunch while soaking in the unique surroundings. A knowledgeable guide will accompany you, providing insights about the area, while lively music and entertainment keep the atmosphere fun and festive throughout the experience.</p>
-        <div class="precio">$90</div>
+        <div class="precio">$110</div>
 
         <!-- Formulario de compra -->
         <form id="form-compra">
@@ -147,14 +147,13 @@
             <!-- Campo de Hotel -->
             <label for="hotel"><b>Hotel:</b></label>
             <input type="text" id="hotel" name="hotel" required>
+<!-- Campo de Cantidad de Niños -->
+<label for="cantidad_ninos"><b>(Children 6 and 8 years old) Number of children::</b></label>
+<input type="number" id="cantidad_ninos" name="cantidad_ninos" min="0" value="0" oninput="calcularPrecio()" required>
 
-            <!-- Campo de Cantidad de Niños -->
-            <label for="cantidad_ninos"><b>Cantidad de niños:</b></label>
-            <input type="number" id="cantidad_ninos" name="cantidad_ninos" min="0" value="0" oninput="calcularPrecio()" required>
-            
-            <!-- Campo de Cantidad de Adultos -->
-            <label for="cantidad_adultos"><b>Cantidad de adultos:</b></label>
-            <input type="number" id="cantidad_adultos" name="cantidad_adultos" min="0" value="0" oninput="calcularPrecio()" required>
+<!-- Campo de Cantidad de Adultos -->
+<label for="cantidad_adultos"><b>Number of adults:</b></label>
+<input type="number" id="cantidad_adultos" name="cantidad_adultos" min="0" value="0" oninput="calcularPrecio()" required>
 
             <button type="button" id="btn-compra">Booking with Gmail</button>
         </form>
@@ -171,9 +170,9 @@
     <script>
         // Función para calcular el precio total
         function calcularPrecio() {
-            const precioBase = 100; 
-            const precioAdultoAdicional = 30; 
-            const precioNino = 45; 
+            const precioBase = 110; 
+            const precioAdultoAdicional = 110; 
+            const precioNino = 110; 
 
             // Obtener los valores de los campos y convertirlos en enteros
             const cantidadNinos = parseInt(document.getElementById('cantidad_ninos').value) || 0;

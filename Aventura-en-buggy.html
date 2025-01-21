@@ -8,7 +8,7 @@
         /* Estilo general de la página */
         body {
             font-family: Arial, sans-serif;
-            background-image: url('assets/img/buggys3producto.webp');
+            background-image: url('assets/img/buggys1producto.webp');
             background-size: cover;
             background-position: center center;
             background-attachment: fixed;
@@ -151,26 +151,28 @@
 <body>
 
     <!-- Botón "Regresar" -->
-    <a href="javascript:history.back()" class="btn-regresar">Regresar</a>
+    <a href="javascript:history.back()" class="btn-regresar">Go back</a>
 
     <div class="producto-card">
-        <img src="assets/img/buggys1producto.webp" alt="1 PAX">
-        <h3>Aventura en buggys</h3>
-        <p>Get ready for an exhilarating Polaris adventure through the diverse terrains of the Dominican Republic. Hop into a powerful Polaris vehicle and navigate through rugged trails, lush forests, and scenic landscapes. Your expert guide will lead you through exciting off-road paths, crossing rivers and exploring hidden gems of nature. This off-road adventure offers a thrilling experience while immersing you in the island's beauty, perfect for adrenaline seekers and nature lovers alike. Discover the Dominican Republic in an entirely new way with this unforgettable Polaris experience.</p>
-        <div class="precio">$90</div>
+        <img src="assets/img/buggys3producto.webp" alt="1 PAX">
+        <h3>Buggys </h3>
+        <p>
+
+            Get ready for an exhilarating Buggys adventure through the diverse terrains of the Dominican Republic. Hop into a powerful buggys vehicle and navigate through rugged trails, lush forests, and scenic landscapes. Your expert guide will lead you through exciting off-road paths, crossing rivers and exploring hidden gems of nature. This off-road adventure offers a thrilling experience while immersing you in the island's beauty, perfect for adrenaline seekers and nature lovers alike. Discover the Dominican Republic in an entirely new way with this unforgettable buggys experience.</p>
+   
 
         <!-- Formulario de compra -->
         <form id="form-compra">
             <!-- Campo de Nombre -->
-            <label for="nombre"><b>Nombre:</b></label>
+            <label for="nombre"><b>Name:</b></label>
             <input type="text" id="nombre" name="nombre" required>
 
             <!-- Campo de Apellido -->
-            <label for="apellido"><b>Apellido:</b></label>
+            <label for="apellido"><b>Last name:</b></label>
             <input type="text" id="apellido" name="apellido" required>
 
             <!-- Campo de Correo Electrónico -->
-            <label for="email"><b>Correo Electrónico:</b></label>
+            <label for="email"><b>Email:</b></label>
             <input type="email" id="email" name="email" required>
 
             <!-- Campo de Hotel -->
@@ -178,18 +180,18 @@
             <input type="text" id="hotel" name="hotel" required>
 
             <!-- Campo de Cantidad de Niños -->
-            <label for="cantidad_ninos"><b>Cantidad de niños:</b></label>
+            <label for="cantidad_ninos"><b>(Children 6 and 8 years old) Number of children::</b></label>
             <input type="number" id="cantidad_ninos" name="cantidad_ninos" min="0" value="0" oninput="calcularPrecio()" required>
             
             <!-- Campo de Cantidad de Adultos -->
-            <label for="cantidad_adultos"><b>Cantidad de adultos:</b></label>
+            <label for="cantidad_adultos"><b>Number of adults:</b></label>
             <input type="number" id="cantidad_adultos" name="cantidad_adultos" min="0" value="0" oninput="calcularPrecio()" required>
 
             <button type="button" id="btn-compra" onclick="generarEnlaceWhatsApp()">Booking</button>
         </form>
 
         <!-- Mostrar precio total -->
-        <div class="precio-final" id="precio-total">Precio Total: $0</div>
+        <div class="precio-final" id="precio-total">Final price: $0</div>
 
         <!-- Botón de reserva con WhatsApp -->
         <a href="#" class="btn-reservar btn-whatsapp" id="btn-reservar-whatsapp" target="_blank" style="display:none;">
@@ -206,8 +208,8 @@
         function calcularPrecio() {
             var cantidadAdultos = document.getElementById("cantidad_adultos").value || 0; // Asegurarse que sea un número
             var cantidadNinos = document.getElementById("cantidad_ninos").value || 0; // Asegurarse que sea un número
-            var precioPorAdulto = 90; // Precio por adulto
-            var precioPorNino = 30;  // Precio por niño
+            var precioPorAdulto = 35; // Precio por adulto
+            var precioPorNino = 35;  // Precio por niño
 
             // Calcular el precio total
             var precioTotal = (parseInt(cantidadAdultos) * precioPorAdulto) + (parseInt(cantidadNinos) * precioPorNino);
@@ -233,7 +235,7 @@
             mensaje += "Hotel: " + hotel + "\n";
             mensaje += "Cantidad de adultos: " + cantidadAdultos + "\n";
             mensaje += "Cantidad de niños: " + cantidadNinos + "\n";
-            mensaje += "Precio total: $" + precioTotal;
+            mensaje += "Precio total: $" + precioTotal;s
 
             // Codificar el mensaje
             var mensajeCodificado = encodeURIComponent(mensaje);
