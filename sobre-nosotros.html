@@ -1,22 +1,303 @@
-<div class="mb-3 row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">nombre </label> <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" placeholder="nombre"
- class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">apellido</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" placeholder="apellido"
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos base */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            height: 100%;
+            color: #333;
+        }
 
-    
- class="mb-3 row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">numero </label> <div class="col-sm-10">
-      <input type="number" readonly class="form-control-plaintext" placeholder="number"
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+            color: #2c3e50;
+            margin: 0;
+        }
 
- class="mb-3 row">
-      <label for="staticEmail" class="col-sm-2 col-form-label">gmail </label> <div class="col-sm-10">
-        <input type="email" readonly class="form-control-plaintext" placeholder="gmail"
- 
- class="mb-3 row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">nombre </label> <div class="col-sm-10">
-      <textarea type="text" readonly class="form-control-plaintext" id="staticEmail" value=""></textarea>
-    </div>  
-</div><button type="submit" class="btn-reservar">submit</button>
+        /* Estilo del encabezado */
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 40px 20px;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 3em;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Animación de entrada del encabezado */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Contenedor principal */
+        .container {
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 1000px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: -30px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: transform 1s ease-out, opacity 1s ease-out;
+        }
+
+        .container.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Títulos */
+        h2 {
+            font-size: 2.5em;
+            color: #34495e;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 2em;
+            color: #34495e;
+            font-weight: 600;
+            margin-top: 40px;
+        }
+
+        /* Párrafos y listas */
+        p {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        ul li {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            flex: 0 0 45%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        ul li i {
+            font-size: 2em;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        /* Enlaces */
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #2980b9;
+        }
+
+        /* Botón de contacto */
+        .contact-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: background-color 0.7;
+            text-align: center;
+            display: block;
+            margin: 40px auto;
+        }
+
+        .contact-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Estilos responsive */
+        @media (max-width: 1200px) {
+            .container {
+                width: 80%;
+                padding: 30px;
+            }
+
+            h2 {
+                font-size: 2.2em;
+            }
+
+            h3 {
+                font-size: 1.8em;
+            }
+
+            p {
+                font-size: 1.1em;
+            }
+
+            ul li {
+                flex: 0 0 45%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                width: 85%;
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            h3 {
+                font-size: 1.6em;
+            }
+
+            p {
+                font-size: 1.1em;
+            }
+
+            ul li {
+                flex: 0 0 48%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            h3 {
+                font-size: 1.6em;
+            }
+
+            p {
+                font-size: 1.1em;
+            }
+
+            ul li {
+                flex: 0 0 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Ajustes para pantallas grandes */
+        @media (min-width: 1500px) {
+            .container {
+                width: 70%;
+            }
+
+            header {
+                font-size: 4em;
+            }
+
+            h2 {
+                font-size: 3em;
+            }
+
+            h3 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado de la página -->
+    <header>
+        Nuestra Empresa
+    </header>
+
+    <!-- Contenedor con la información sobre nosotros -->
+    <div class="container">
+        <h2>Sobre Nosotros</h2>
+        <p>
+            En <strong>Nuestra Empresa</strong>, nos especializamos en proporcionar soluciones innovadoras y de alta calidad para el sector tecnológico. Nuestra misión es transformar ideas en proyectos exitosos mediante la implementación de tecnologías de vanguardia y un equipo comprometido con la excelencia.
+        </p>
+
+        <p>
+            Fundada en 2010, hemos crecido con el objetivo de ofrecer productos y servicios que no solo satisfagan las necesidades de nuestros clientes, sino que también superen sus expectativas. Creemos en la innovación, la sostenibilidad y el trabajo en equipo como los pilares fundamentales para el éxito.
+        </p>
+
+        <h3>Nuestros Valores</h3>
+        <ul>
+            <li>
+                <i class="fas fa-lightbulb"></i>
+                Innovación
+            </li>
+            <li>
+                <i class="fas fa-cogs"></i>
+                Calidad
+            </li>
+            <li>
+                <i class="fas fa-users"></i>
+                Trabajo en equipo
+            </li>
+            <li>
+                <i class="fas fa-leaf"></i>
+                Sostenibilidad
+            </li>
+        </ul>
+
+        <p>
+            Nuestra empresa está compuesta por un equipo multidisciplinario de profesionales apasionados por su trabajo. Cada uno de ellos aporta su experiencia y creatividad para hacer realidad los proyectos de nuestros clientes.
+        </p>
+
+        <a href="mailto:harmonyexcursions@outlook.com" class="contact-button">Contáctanos</a>
+    </div>
+
+    <script>
+        // Añadir la animación de entrada a la sección
+        window.onload = function() {
+            const container = document.querySelector('.container');
+            container.classList.add('show');
+        };
+    </script>
+
+    <!-- Agregar los íconos de FontAwesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
