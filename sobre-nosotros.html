@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nosotros</title>
+    <title>About Us</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Estilos base */
+        /* Base styles */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f7f7f7;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
             flex-direction: column;
-            height: 100%;
+            justify-content: flex-start;
+            align-items: center;
             color: #333;
+            box-sizing: border-box;
+            min-height: 100vh;
         }
 
         h1, h2, h3 {
@@ -26,88 +27,68 @@
             margin: 0;
         }
 
-        /* Estilo del encabezado */
+        /* Header style */
         header {
             background-color: #3498db;
             color: white;
-            padding: 40px 20px;
+            padding: 20px;
             width: 100%;
             text-align: center;
             box-sizing: border-box;
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 3em;
-            animation: fadeIn 1.5s ease-out;
+            font-size: 2em;
         }
 
-        /* Animación de entrada del encabezado */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Contenedor principal */
+        /* Main container */
         .container {
             background-color: #ffffff;
-            width: 90%;
-            max-width: 1000px;
-            padding: 40px;
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-top: -30px;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: transform 1s ease-out, opacity 1s ease-out;
+            margin: 20px;
+            box-sizing: border-box;
         }
 
-        .container.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        /* Títulos */
+        /* Titles */
         h2 {
-            font-size: 2.5em;
+            font-size: 2em;
             color: #34495e;
             text-align: center;
             margin-bottom: 20px;
         }
 
         h3 {
-            font-size: 2em;
+            font-size: 1.8em;
             color: #34495e;
             font-weight: 600;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
-        /* Párrafos y listas */
+        /* Paragraphs and lists */
         p {
             margin-bottom: 20px;
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #555;
             line-height: 1.6;
         }
 
         ul {
             list-style-type: none;
-            padding-left: 0;
-            margin-bottom: 20px;
+            padding: 0;
+            margin: 20px 0;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-evenly;
+            justify-content: center;
         }
 
         ul li {
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #7f8c8d;
-            margin-bottom: 15px;
-            flex: 0 0 45%;
+            margin: 10px 15px;
+            flex: 1 1 40%;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -117,10 +98,10 @@
         ul li i {
             font-size: 2em;
             color: #3498db;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
-        /* Enlaces */
+        /* Links */
         a {
             color: #3498db;
             text-decoration: none;
@@ -132,8 +113,8 @@
             color: #2980b9;
         }
 
-        /* Botón de contacto */
-        .contact-button {
+        /* Buttons */
+        .button {
             display: inline-block;
             padding: 12px 30px;
             background-color: #3498db;
@@ -141,68 +122,25 @@
             font-weight: 600;
             border-radius: 30px;
             text-decoration: none;
-            margin-top: 30px;
-            transition: background-color 0.7;
+            margin: 15px auto 0;
+            transition: background-color 0.3s;
             text-align: center;
-            display: block;
-            margin: 40px auto;
+            max-width: 200px;
         }
 
-        .contact-button:hover {
+        .button:hover {
             background-color: #2980b9;
         }
 
-        /* Estilos responsive */
-        @media (max-width: 1200px) {
-            .container {
-                width: 80%;
-                padding: 30px;
-            }
-
-            h2 {
-                font-size: 2.2em;
-            }
-
-            h3 {
-                font-size: 1.8em;
-            }
-
-            p {
-                font-size: 1.1em;
-            }
-
-            ul li {
-                flex: 0 0 45%;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .container {
-                width: 85%;
-                padding: 25px;
-            }
-
-            h2 {
-                font-size: 2em;
-            }
-
-            h3 {
-                font-size: 1.6em;
-            }
-
-            p {
-                font-size: 1.1em;
-            }
-
-            ul li {
-                flex: 0 0 48%;
-            }
-        }
-
+        /* Responsive styles */
         @media (max-width: 768px) {
+            header {
+                font-size: 1.5em;
+            }
+
             .container {
-                width: 90%;
-                padding: 20px;
+                padding: 15px;
+                margin: 10px;
             }
 
             h2 {
@@ -214,89 +152,63 @@
             }
 
             p {
-                font-size: 1.1em;
+                font-size: 1em;
             }
 
             ul li {
-                flex: 0 0 100%;
-                margin-bottom: 10px;
-            }
-        }
-
-        /* Ajustes para pantallas grandes */
-        @media (min-width: 1500px) {
-            .container {
-                width: 70%;
-            }
-
-            header {
-                font-size: 4em;
-            }
-
-            h2 {
-                font-size: 3em;
-            }
-
-            h3 {
-                font-size: 2.5em;
+                flex: 1 1 100%;
+                margin: 10px 0;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Encabezado de la página -->
+    <!-- Page header -->
     <header>
-        Nuestra Empresa
+        Our Company
     </header>
 
-    <!-- Contenedor con la información sobre nosotros -->
+    <!-- Main container with about us information -->
     <div class="container">
-        <h2>Sobre Nosotros</h2>
+        <h2>About Us</h2>
         <p>
-            En <strong>Nuestra Empresa</strong>, nos especializamos en proporcionar soluciones innovadoras y de alta calidad para el sector tecnológico. Nuestra misión es transformar ideas en proyectos exitosos mediante la implementación de tecnologías de vanguardia y un equipo comprometido con la excelencia.
+            At <strong>Our Company</strong>, we specialize in providing innovative and high-quality solutions for the technology sector. Our mission is to transform ideas into successful projects by implementing cutting-edge technologies and a team committed to excellence.
         </p>
 
         <p>
-            Fundada en 2010, hemos crecido con el objetivo de ofrecer productos y servicios que no solo satisfagan las necesidades de nuestros clientes, sino que también superen sus expectativas. Creemos en la innovación, la sostenibilidad y el trabajo en equipo como los pilares fundamentales para el éxito.
+            We have grown with the goal of offering products and services that not only meet our clients' needs but also exceed their expectations. We believe in innovation, sustainability, and teamwork as the fundamental pillars for success.
         </p>
 
-        <h3>Nuestros Valores</h3>
+        <h3>Our Values</h3>
         <ul>
             <li>
                 <i class="fas fa-lightbulb"></i>
-                Innovación
+                Innovation
             </li>
             <li>
                 <i class="fas fa-cogs"></i>
-                Calidad
+                Quality
             </li>
             <li>
                 <i class="fas fa-users"></i>
-                Trabajo en equipo
+                Teamwork
             </li>
             <li>
                 <i class="fas fa-leaf"></i>
-                Sostenibilidad
+                Sustainability
             </li>
         </ul>
 
         <p>
-            Nuestra empresa está compuesta por un equipo multidisciplinario de profesionales apasionados por su trabajo. Cada uno de ellos aporta su experiencia y creatividad para hacer realidad los proyectos de nuestros clientes.
+            Our company is made up of a multidisciplinary team of professionals passionate about their work. Each of them brings their experience and creativity to make our clients' projects a reality.
         </p>
 
-        <a href="mailto:harmonyexcursions@outlook.com" class="contact-button">Contáctanos</a>
+        <!-- Buttons -->
+        <a href="mailto:contact@ourcompany.com" class="button">Contact Us</a>
+        <a href="index.html" class="button">Back to Home</a>
     </div>
 
-    <script>
-        // Añadir la animación de entrada a la sección
-        window.onload = function() {
-            const container = document.querySelector('.container');
-            container.classList.add('show');
-        };
-    </script>
-
-    <!-- Agregar los íconos de FontAwesome -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </body>
