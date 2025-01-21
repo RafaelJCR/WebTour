@@ -206,8 +206,8 @@
         function calcularPrecio() {
             var cantidadAdultos = document.getElementById("cantidad_adultos").value || 0; // Asegurarse que sea un número
             var cantidadNinos = document.getElementById("cantidad_ninos").value || 0; // Asegurarse que sea un número
-            var precioPorAdulto = 35; // Precio por adulto
-            var precioPorNino = 35;  // Precio por niño
+            var precioPorAdulto = 100; // Precio por adulto
+            var precioPorNino = 50;  // Precio por niño
 
             // Calcular el precio total
             var precioTotal = (parseInt(cantidadAdultos) * precioPorAdulto) + (parseInt(cantidadNinos) * precioPorNino);
