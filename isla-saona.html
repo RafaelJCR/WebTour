@@ -158,7 +158,6 @@
         <h3>Saona island</h3>
         <p>Embark on an exciting adventure with regular bus transportation and an experienced guide. followed by an exciting boat ride. Enjoy a delicious lunch and relax in a natural pool, surrounded by stunning views. Throughout the trip, refreshing drinks are available and constant entertainment keeps the atmosphere festive and fun.</p>
    
-
         <!-- Formulario de compra -->
         <form id="form-compra">
             <!-- Campo de Nombre -->
@@ -178,14 +177,14 @@
             <input type="text" id="hotel" name="hotel" required>
 
             <!-- Campo de Cantidad de Niños -->
-            <label for="cantidad_ninos"><b>(Children 6 and 8 years old) Number of children::</b></label>
+            <label for="cantidad_ninos"><b>(Children 6 and 8 years old) Number of children:</b></label>
             <input type="number" id="cantidad_ninos" name="cantidad_ninos" min="0" value="0" oninput="calcularPrecio()" required>
             
             <!-- Campo de Cantidad de Adultos -->
             <label for="cantidad_adultos"><b>Number of adults:</b></label>
             <input type="number" id="cantidad_adultos" name="cantidad_adultos" min="0" value="0" oninput="calcularPrecio()" required>
 
-            <button type="button" id="btn-compra" onclick="generarEnlaceWhatsApp()">Booking</button>
+            <button type="submit" id="btn-compra" onclick="generarEnlaceWhatsApp(event)">Booking</button>
         </form>
 
         <!-- Mostrar precio total -->
@@ -216,7 +215,9 @@
             document.getElementById("precio-total").textContent = "Precio Total: $" + precioTotal;
         }
 
-        function generarEnlaceWhatsApp() {
+        function generarEnlaceWhatsApp(event) {
+            event.preventDefault(); // Evitar que se recargue la página al hacer clic en el botón
+
             // Obtener los valores del formulario
             var nombre = document.getElementById("nombre").value;
             var apellido = document.getElementById("apellido").value;
@@ -233,7 +234,7 @@
             mensaje += "Hotel: " + hotel + "\n";
             mensaje += "Cantidad de adultos: " + cantidadAdultos + "\n";
             mensaje += "Cantidad de niños: " + cantidadNinos + "\n";
-            mensaje += "Precio total: $" + precioTotal;s
+            mensaje += "Precio total: $" + precioTotal;
 
             // Codificar el mensaje
             var mensajeCodificado = encodeURIComponent(mensaje);
