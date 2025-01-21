@@ -218,6 +218,7 @@
             document.getElementById("precio-total").textContent = "Precio Total: $" + precioTotal;
         }
 
+   
         function generarEnlaceWhatsApp() {
             // Obtener los valores del formulario
             var nombre = document.getElementById("nombre").value;
@@ -235,7 +236,7 @@
             mensaje += "Hotel: " + hotel + "\n";
             mensaje += "Cantidad de adultos: " + cantidadAdultos + "\n";
             mensaje += "Cantidad de niños: " + cantidadNinos + "\n";
-            mensaje += "Precio total: $" + precioTotal;s
+            mensaje += "Precio total: $" + precioTotal;
 
             // Codificar el mensaje
             var mensajeCodificado = encodeURIComponent(mensaje);
