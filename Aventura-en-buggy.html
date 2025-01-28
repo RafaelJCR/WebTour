@@ -160,6 +160,7 @@
 
             Get ready for an exhilarating Buggys adventure through the diverse terrains of the Dominican Republic. Hop into a powerful buggys vehicle and navigate through rugged trails, lush forests, and scenic landscapes. Your expert guide will lead you through exciting off-road paths, crossing rivers and exploring hidden gems of nature. This off-road adventure offers a thrilling experience while immersing you in the island's beauty, perfect for adrenaline seekers and nature lovers alike. Discover the Dominican Republic in an entirely new way with this unforgettable buggys experience.</p>
    
+            <div class="precio">$35</div>
 
         <!-- Formulario de compra -->
         <form id="form-compra">
@@ -191,7 +192,7 @@
         </form>
 
         <!-- Mostrar precio total -->
-        <div class="precio-final" id="precio-total">Final price: $0</div>
+        <div class="precio-final" id="precio-total">: $0</div>
 
         <!-- Botón de reserva con WhatsApp -->
         <a href="#" class="btn-reservar btn-whatsapp" id="btn-reservar-whatsapp" target="_blank" style="display:none;">
@@ -227,7 +228,7 @@
             var hotel = document.getElementById("hotel").value;
             var cantidadNinos = document.getElementById("cantidad_ninos").value;
             var cantidadAdultos = document.getElementById("cantidad_adultos").value;
-            var precioTotal = document.getElementById("precio-total").textContent.replace('Precio Total: $', '');
+            var precioTotal = document.getElementById("precio-total").textContent.replace('Precio Total: ', '');
 
             // Crear el mensaje de WhatsApp
             var mensaje = "Hola, me interesa reservar la aventura en buggys. Aquí están mis datos:\n";
@@ -250,7 +251,7 @@
             btnWhatsApp.style.display = "inline-block"; // Mostrar el enlace de WhatsApp
 
             // Crear el enlace para Gmail
-            var enlaceGmail = "mailto:example@example.com?subject=Reserva%20de%20Producto%20Buggy&body=" + mensajeCodificado;
+            var enlaceGmail = "mailto:harmonyexcursions@outlook.com?subject=Reserva%20de%20Producto%20Buggy&body=" + mensajeCodificado;
             
             // Mostrar el enlace de Gmail
             var btnGmail = document.getElementById("btn-reservar-gmail");
