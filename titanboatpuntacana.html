@@ -211,16 +211,12 @@
             
             var precioPorAdulto = 55;  // Precio por adulto
             var precioPorNino = 55;    // Precio por niño
-            var precioAdicional = 55;  // Precio adicional (solo se agrega si hay más de 1 adulto o niño)
+            var precioAdicional = 10;  // Precio adicional (solo se agrega si hay más de 1 adulto o niño)
 
             // Calcular el precio base
             var precioTotal = (cantidadAdultos * precioPorAdulto) + (cantidadNinos * precioPorNino);
             
-            // Sumar precio adicional solo si hay más de 1 adulto o más de 1 niño
-            if (cantidadAdultos > 1 || cantidadNinos > 1) {
-                precioTotal += precioAdicional;
-            }
-
+       
             // Actualizar el precio total en la página
             document.getElementById("precio-total").textContent = "Precio Total: $" + precioTotal;
         }
