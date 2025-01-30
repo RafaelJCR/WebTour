@@ -34,7 +34,7 @@
 
         .producto-card h3 {
             font-size: 24px;
-            color: #fff ;
+            color: #fff;
             margin-top: 13px;
         }
 
@@ -97,7 +97,7 @@
             display: inline-block;
             width: 95%;
             text-align: center;
-            padding: 10px; /* Aseguramos que el tamaño sea igual al botón de Gmail */
+            padding: 10px;
             background-color: #40c351;
             color: white;
             font-size: 16px;
@@ -126,7 +126,7 @@
     <div class="producto-card">
         <img src="assets/img/cayo-levantado-samana.jpg" alt="1 PAX">
         <h3>Aventura en buggys</h3>
-        <p>Get ready for an exhilarating Polaris adventure through the diverse terrains of the Dominican Republic. Hop into a powerful Polaris vehicle and navigate through rugged trails, lush forests, and scenic landscapes. Your expert guide will lead you through exciting off-road paths, crossing rivers and exploring hidden gems of nature. This off-road adventure offers a thrilling experience while immersing you in the island's beauty, perfect for adrenaline seekers and nature lovers alike. Discover the Dominican Republic in an entirely new way with this unforgettable Polaris experience.</p>
+        <p>Get ready for an exhilarating Polaris adventure through the diverse terrains of the Dominican Republic...</p>
         <div class="precio">$90</div>
 
         <!-- Formulario de compra -->
@@ -170,9 +170,9 @@
     <script>
         // Función para calcular el precio total
         function calcularPrecio() {
-            const precioBase = 100; 
-            const precioAdultoAdicional = 30; 
-            const precioNino = 45; 
+            const precioBase = 90; // Precio base para el primer adulto
+            const precioAdultoAdicional = 30; // Precio adicional por cada adulto extra
+            const precioNino = 45; // Precio por cada niño
 
             // Obtener los valores de los campos y convertirlos en enteros
             const cantidadNinos = parseInt(document.getElementById('cantidad_ninos').value) || 0;
@@ -182,9 +182,9 @@
 
             // Calcular el precio de los adultos
             if (cantidadAdultos > 0) {
-                precioTotal += precioBase; 
+                precioTotal += precioBase; // El primer adulto paga el precio base
                 if (cantidadAdultos > 1) {
-                    precioTotal += (cantidadAdultos - 1) * precioAdultoAdicional; 
+                    precioTotal += (cantidadAdultos - 1) * precioAdultoAdicional; // Adultos adicionales
                 }
             }
 

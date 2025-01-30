@@ -1,5 +1,4 @@
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="es">
     <head>
         <meta charset="UTF-8">
@@ -160,113 +159,76 @@
             <p>Enjoy a unique experience with private ground transportation, an expert tour guide, and everything you need for an amazing day. The tour includes refreshing alcoholic beverages and a selection of tropical fruits for you to enjoy as you explore. Relax and savor a delicious local lunch, accompanied by onboard entertainment and music that will make the atmosphere even more fun. A day full of adventure and enjoyment, with everything organized for your comfort and pleasure. </p>
             <div class="precio">$3700.00</div>
         
+  <!-- Formulario de compra -->
+<form id="form-compra">
+    <!-- Campo de Nombre -->
+    <label for="nombre"><b>Nombre:</b></label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <!-- Campo de Apellido -->
+    <label for="apellido"><b>Apellido:</b></label>
+    <input type="text" id="apellido" name="apellido" required>
+
+    <!-- Campo de Correo Electrónico -->
+    <label for="email"><b>Correo Electrónico:</b></label>
+    <input type="email" id="email" name="email" required>
+
+    <!-- Campo de Hotel -->
+    <label for="hotel"><b>Hotel:</b></label>
+    <input type="text" id="hotel" name="hotel" required>
+
+    <!-- Campo de Cantidad de Adultos -->
+    <label for="cantidad_adultos"><b>Number of adults:</b></label>
+    <input type="number" id="cantidad_adultos" name="cantidad_adultos" value="1" min="1" max="1" readonly>
+
+    <button type="button" id="btn-compra" onclick="generarEnlaceWhatsAppYGmail()">Booking</button>
+</form>
+
+<!-- Mostrar precio total -->
+<div class="precio-final" id="precio-total">Precio Total: $3700</div>
+
+<!-- Botón de reserva con WhatsApp -->
+<a href="#" class="btn-reservar btn-whatsapp" id="btn-reservar-whatsapp" target="_blank" style="display:none;">
+    BOOKING with WhatsApp
+</a>
+
+<!-- Botón de reserva con Gmail -->
+<a href="#" class="btn-reservar btn-gmail" id="btn-reservar-gmail" target="_blank" style="display:none;">
+    BOOKING with Gmail
+</a>
+
+<script>
+    function generarEnlaceWhatsAppYGmail() {
+        // Obtener los valores del formulario
+        var nombre = document.getElementById("nombre").value;
+        var apellido = document.getElementById("apellido").value;
+        var email = document.getElementById("email").value;
+        var hotel = document.getElementById("hotel").value;
+        var precio = "3700"; // Precio fijo
         
-            <!-- Formulario de compra -->
-            <form id="form-compra">
-                <!-- Campo de Nombre -->
-                <label for="nombre"><b>Nombre:</b></label>
-                <input type="text" id="nombre" name="nombre" required>
-    
-                <!-- Campo de Apellido -->
-                <label for="apellido"><b>Apellido:</b></label>
-                <input type="text" id="apellido" name="apellido" required>
-    
-                <!-- Campo de Correo Electrónico -->
-                <label for="email"><b>Correo Electrónico:</b></label>
-                <input type="email" id="email" name="email" required>
-    
-                <!-- Campo de Hotel -->
-                <label for="hotel"><b>Hotel:</b></label>
-                <input type="text" id="hotel" name="hotel" required>
-    
-           <!-- Campo de Cantidad de Niños -->
-           <label for="cantidad_ninos"><b>(Children 6 and 8 years old) Number of children::</b></label>
-           <input type="number" id="cantidad_ninos" name="cantidad_ninos" min="0" value="0" oninput="calcularPrecio()" required>
-           
-           <!-- Campo de Cantidad de Adultos -->
-           <label for="cantidad_adultos"><b>Number of adults:</b></label>
-           <input type="number" id="cantidad_adultos" name="cantidad_adultos" min="0" value="0" oninput="calcularPrecio()" required>
-    
-                <button type="button" id="btn-compra" onclick="generarEnlaceWhatsApp()">Booking</button>
-            </form>
-    
-            <!-- Mostrar precio total -->
-            <div class="precio-final" id="precio-total">Precio Total: $0</div>
-    
-            <!-- Botón de reserva con WhatsApp -->
-            <a href="#" class="btn-reservar btn-whatsapp" id="btn-reservar-whatsapp" target="_blank" style="display:none;">
-                BOOKING with WhatsApp
-            </a>
-    
-            <!-- Botón de reserva con Gmail -->
-            <a href="#" class="btn-reservar btn-gmail" id="btn-reservar-gmail" target="_blank" style="display:none;">
-                BOOKING with Gmail
-            </a>
-        </div>
-    
-        <script>
-            function calcularPrecio() {
-                // Asegurarse de que los valores sean números
-                var cantidadAdultos = parseInt(document.getElementById("cantidad_adultos").value) || 0; 
-                var cantidadNinos = parseInt(document.getElementById("cantidad_ninos").value) || 0; 
-                
-                var precioPorAdulto = 55;  // Precio por adulto
-                var precioPorNino = 55;    // Precio por niño
-                var precioAdicional = 55;  // Precio adicional (solo se agrega si hay más de 1 adulto o niño)
-    
-                // Calcular el precio base
-                var precioTotal = (cantidadAdultos * precioPorAdulto) + (cantidadNinos * precioPorNino);
-                
-                // Sumar precio adicional solo si hay más de 1 adulto o más de 1 niño
-                if (cantidadAdultos > 1 || cantidadNinos > 1) {
-                    precioTotal += precioAdicional;
-                }
-    
-                // Actualizar el precio total en la página
-                document.getElementById("precio-total").textContent = "Precio Total: $" + precioTotal;
-            }
-    
-            function generarEnlaceWhatsApp() {
-                // Obtener los valores del formulario
-                var nombre = document.getElementById("nombre").value;
-                var apellido = document.getElementById("apellido").value;
-                var email = document.getElementById("email").value;
-                var hotel = document.getElementById("hotel").value;
-                var cantidadNinos = document.getElementById("cantidad_ninos").value;
-                var cantidadAdultos = document.getElementById("cantidad_adultos").value;
-                var precioTotal = document.getElementById("precio-total").textContent.replace('Precio Total: $', '');
-    
-                // Crear el mensaje de WhatsApp
-                var mensaje = "Hola, me interesa reservar la aventura en Saona island . Aquí están mis datos:\n";
-                mensaje += "Nombre: " + nombre + " " + apellido + "\n";
-                mensaje += "Correo electrónico: " + email + "\n";
-                mensaje += "Hotel: " + hotel + "\n";
-                mensaje += "Cantidad de adultos: " + cantidadAdultos + "\n";
-                mensaje += "Cantidad de niños: " + cantidadNinos + "\n";
-                mensaje += "Precio total: $" + precioTotal;
-    
-                // Codificar el mensaje
-                var mensajeCodificado = encodeURIComponent(mensaje);
-    
-                // Generar el enlace de WhatsApp
-                var enlaceWhatsApp = "https://wa.me/+18092514054?text=" + mensajeCodificado;
-    
-                // Mostrar el enlace de WhatsApp y ocultar el botón de Gmail
-                var btnWhatsApp = document.getElementById("btn-reservar-whatsapp");
-                btnWhatsApp.setAttribute("href", enlaceWhatsApp);
-                btnWhatsApp.style.display = "inline-block"; // Mostrar el enlace de WhatsApp
-    
-                // Crear el enlace para Gmail
-                var enlaceGmail = "mailto:harmonyexcursions@outlook.com?subject=Reserva%20de%20Producto%20Saona Island&body=" + mensajeCodificado;
-                
-                // Mostrar el enlace de Gmail
-                var btnGmail = document.getElementById("btn-reservar-gmail");
-                btnGmail.setAttribute("href", enlaceGmail);
-                btnGmail.style.display = "inline-block"; // Mostrar el enlace de Gmail
-            }
-        </script>
-    
-    </body>
-    </html>
-    
-    
+        // Crear el mensaje de WhatsApp
+        var mensaje = `Hello, I would like to make a booking. Here are my details:%0A
+        Name: ${nombre} ${apellido}%0A
+        Email: ${email}%0A
+        Hotel: ${hotel}%0A
+        Total Price: $${precio}`;
+        
+        // Crear el enlace de WhatsApp con el número específico
+        var urlWhatsApp = https://wa.me/18092514054?text=${mensaje};
+        
+        // Asignar el enlace al botón de WhatsApp
+        var btnWhatsApp = document.getElementById("btn-reservar-whatsapp");
+        btnWhatsApp.href = urlWhatsApp;
+        btnWhatsApp.style.display = "block"; // Mostrar el botón
+
+        // Crear enlace de Gmail
+        var subject = encodeURIComponent("Booking Request");
+        var body = encodeURIComponent(Hello, I would like to make a booking. Here are my details:\n\nName: ${nombre} ${apellido}\nEmail: ${email}\nHotel: ${hotel}\nTotal Price: $${precio});
+        var urlGmail = mailto:?subject=${subject}&body=${body};
+        
+        // Asignar el enlace al botón de Gmail
+        var btnGmail = document.getElementById("btn-reservar-gmail");
+        btnGmail.href = urlGmail;
+        btnGmail.style.display = "block"; // Mostrar el botón
+    }
+</script>

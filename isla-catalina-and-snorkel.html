@@ -177,13 +177,13 @@
             <label for="hotel"><b>Hotel:</b></label>
             <input type="text" id="hotel" name="hotel" required>
 
-       <!-- Campo de Cantidad de Niños -->
-       <label for="cantidad_ninos"><b>(Children 6 and 8 years old) Number of children::</b></label>
-       <input type="number" id="cantidad_ninos" name="cantidad_ninos" min="0" value="0" oninput="calcularPrecio()" required>
-       
-       <!-- Campo de Cantidad de Adultos -->
-       <label for="cantidad_adultos"><b>Number of adults:</b></label>
-       <input type="number" id="cantidad_adultos" name="cantidad_adultos" min="0" value="0" oninput="calcularPrecio()" required>
+            <!-- Campo de Cantidad de Niños -->
+            <label for="cantidad_ninos"><b>(Children 6 and 8 years old) Number of children:</b></label>
+            <input type="number" id="cantidad_ninos" name="cantidad_ninos" min="0" value="0" oninput="calcularPrecio()" required>
+            
+            <!-- Campo de Cantidad de Adultos -->
+            <label for="cantidad_adultos"><b>Number of adults:</b></label>
+            <input type="number" id="cantidad_adultos" name="cantidad_adultos" min="0" value="0" oninput="calcularPrecio()" required>
 
             <button type="button" id="btn-compra" onclick="generarEnlaceWhatsApp()">Booking</button>
         </form>
@@ -205,20 +205,27 @@
     <script>
         function calcularPrecio() {
             // Asegurarse de que los valores sean números
-            var cantidadAdultos = parseInt(document.getElementById("cantidad_adultos").value) || 0; 
-            var cantidadNinos = parseInt(document.getElementById("cantidad_ninos").value) || 0; 
-            
-            var precioPorAdulto = 60;  // Precio por adulto
-            var precioPorNino = 30;    // Precio por niño
-            var precioAdicional = 60;  // Precio adicional (solo se agrega si hay más de 1 adulto o niño)
+            var cantidadAdultos = parseInt(document.getElementById("cantidad_adultos").value) || 0;
+            var cantidadNinos = parseInt(document.getElementById("cantidad_ninos").value) || 0;
 
-            // Calcular el precio base
-            var precioTotal = (cantidadAdultos * precioPorAdulto) + (cantidadNinos * precioPorNino);
-            
-            // Sumar precio adicional solo si hay más de 1 adulto o más de 1 niño
-            if (cantidadAdultos > 1 || cantidadNinos > 1) {
-                precioTotal += precioAdicional;
+            var precioPrimerAdulto = 60;  // Precio del primer adulto
+            var precioAdultoAdicional = 60;    // Precio de cada adulto adicional
+            var precioPorNino = 30;    // Precio por niño
+
+            var precioTotal = 0;
+
+            // Si hay al menos 1 adulto
+            if (cantidadAdultos > 0) {
+                // El primer adulto paga el precio completo
+                precioTotal += precioPrimerAdulto;
+                // Si hay más de 1 adulto, cada adulto adicional paga el precio reducido
+                if (cantidadAdultos > 1) {
+                    precioTotal += (cantidadAdultos - 1) * precioAdultoAdicional;
+                }
             }
+
+            // Calcular el precio por niños
+            precioTotal += cantidadNinos * precioPorNino;
 
             // Actualizar el precio total en la página
             document.getElementById("precio-total").textContent = "Precio Total: $" + precioTotal;

@@ -203,16 +203,31 @@
 
     <script>
         function calcularPrecio() {
-            var cantidadAdultos = document.getElementById("cantidad_adultos").value || 0; // Asegurarse que sea un número
-            var cantidadNinos = document.getElementById("cantidad_ninos").value || 0; // Asegurarse que sea un número
-            var precioPorAdulto = 60; // Precio por adulto
-            var precioPorNino = 30;  // Precio por niño
+            // Asegurarse de que los valores sean números
+            var cantidadAdultos = parseInt(document.getElementById("cantidad_adultos").value) || 0;
+            var cantidadNinos = parseInt(document.getElementById("cantidad_ninos").value) || 0;
 
-            // Calcular el precio total
-            var precioTotal = (parseInt(cantidadAdultos) * precioPorAdulto) + (parseInt(cantidadNinos) * precioPorNino);
-            
-            // Actualizar el precio total
-            document.getElementById("precio-total").textContent = "Precio Total: $" + precioTotal;
+            var precioPrimerAdulto = 60;  // Precio del primer adulto
+            var precioAdultoAdicional = 60;    // Precio de cada adulto adicional
+            var precioPorNino = 30;    // Precio por niño
+
+            var precioTotal = 0;
+
+            // Si hay al menos 1 adulto
+            if (cantidadAdultos > 0) {
+                // El primer adulto paga el precio completo
+                precioTotal += precioPrimerAdulto;
+                // Si hay más de 1 adulto, cada adulto adicional paga el precio reducido
+                if (cantidadAdultos > 1) {
+                    precioTotal += (cantidadAdultos - 1) * precioAdultoAdicional;
+                }
+            }
+
+            // Calcular el precio por niños
+            precioTotal += cantidadNinos * precioPorNino;
+
+            // Actualizar el precio total en la página
+            document.getElementById("precio-total").textContent = "Final price: $" + precioTotal;
         }
 
         function generarEnlaceWhatsApp(event) {
@@ -225,7 +240,7 @@
             var hotel = document.getElementById("hotel").value;
             var cantidadNinos = document.getElementById("cantidad_ninos").value;
             var cantidadAdultos = document.getElementById("cantidad_adultos").value;
-            var precioTotal = document.getElementById("precio-total").textContent.replace('Precio Total: $', '');
+            var precioTotal = document.getElementById("precio-total").textContent.replace('Final price: $', '');
 
             // Crear el mensaje de WhatsApp
             var mensaje = "Hola, me interesa reservar la aventura a la isla Saona. Aquí están mis datos:\n";

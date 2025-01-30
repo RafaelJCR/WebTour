@@ -155,9 +155,9 @@
 
     <div class="producto-card">
         <img src="assets/img/haitises1.webp" alt="1 PAX">
-        <h3>Catalina Diving</h3>
+        <h3>Los Haitises</h3>
         <p>Discover the natural beauty of Los Haitises National Park, with its lush mangroves, stunning rock formations, and ancient caves. Sail through its scenic rivers, surrounded by rich wildlife. The tour also includes a visit to the breathtaking Limón Waterfall, where you can swim in the refreshing waters amidst the tropical jungle. A perfect blend of adventure and nature!</p>
-        <div class="precio">$320 </div>
+        <div class="precio">$320</div>
 
         <!-- Formulario de compra -->
         <form id="form-compra">
@@ -177,19 +177,15 @@
             <label for="hotel"><b>Hotel:</b></label>
             <input type="text" id="hotel" name="hotel" required>
 
-            <!-- Campo de Cantidad de Niños -->
-            <label for="cantidad_ninos"><b>(Children 6 and 8 years old) Number of children:</b></label>
-            <input type="number" id="cantidad_ninos" name="cantidad_ninos" min="0" value="0" oninput="calcularPrecio()" required>
-            
             <!-- Campo de Cantidad de Adultos -->
-            <label for="cantidad_adultos"><b>Number of adults:</b></label>
-            <input type="number" id="cantidad_adultos" name="cantidad_adultos" min="0" value="0" oninput="calcularPrecio()" required>
+            <label for="cantidad_adultos"><b>Number of couples:</b></label>
+            <input type="number" id="cantidad_adultos" name="cantidad_adultos" min="1" value="1" oninput="calcularPrecio()" required>
 
-            <button type="button" id="btn-compra" onclick="generarEnlaceWhatsApp()">Booking</button>
+            <button type="button" id="btn-compra" onclick="generarEnlaceWhatsApp()">BOOKING</button>
         </form>
 
         <!-- Mostrar precio total -->
-        <div class="precio-final" id="precio-total">Total Price: $0</div>
+        <div class="precio-final" id="precio-total">Total Price: $320</div>
 
         <!-- Botón de reserva con WhatsApp -->
         <a href="#" class="btn-reservar btn-whatsapp" id="btn-reservar-whatsapp" target="_blank" style="display:none;">
@@ -204,20 +200,19 @@
 
     <script>
         function calcularPrecio() {
-            // Asegurarse de que los valores sean números
-            var cantidadAdultos = parseInt(document.getElementById("cantidad_adultos").value) || 0; 
-            var cantidadNinos = parseInt(document.getElementById("cantidad_ninos").value) || 0; 
-            
-            var precioPorAdulto = 320;  // Precio por adulto
-            var precioPorNino = 40;     // Precio por niño
-            var precioAdicional = 40;   // Precio adicional (se sumará si hay más de 1 adulto o más de 1 niño)
+            // Asegurarse de que el valor sea un número
+            var cantidadAdultos = parseInt(document.getElementById("cantidad_adultos").value) || 1;
 
-            // Calcular el precio base
-            var precioTotal = (cantidadAdultos * precioPorAdulto) + (cantidadNinos * precioPorNino);
-            
-            // Sumar precio adicional solo si hay más de 1 adulto o más de 1 niño
-            if (cantidadAdultos > 1 || cantidadNinos > 1) {
-                precioTotal += precioAdicional;
+            var precioPorPareja = 320;  // Precio por pareja
+            var precioAdicional = 40;  // Precio adicional por cada pareja extra
+            var precioTotal = 0;
+
+            // Calcular el precio total: el primer adulto siempre paga el precio base
+            precioTotal = precioPorPareja;
+
+            // Si hay más de una pareja, agregar el costo adicional por pareja
+            if (cantidadAdultos > 1) {
+                precioTotal += (cantidadAdultos - 1) * precioAdicional;
             }
 
             // Actualizar el precio total en la página
@@ -230,17 +225,15 @@
             var apellido = document.getElementById("apellido").value;
             var email = document.getElementById("email").value;
             var hotel = document.getElementById("hotel").value;
-            var cantidadNinos = document.getElementById("cantidad_ninos").value;
             var cantidadAdultos = document.getElementById("cantidad_adultos").value;
             var precioTotal = document.getElementById("precio-total").textContent.replace('Total Price: $', '');
 
             // Crear el mensaje de WhatsApp
-            var mensaje = "Hello, I am interested in booking the Catalina Diving excursion. Here are my details:\n";
+            var mensaje = "Hello, I am interested in booking the Los Haitises tour. Here are my details:\n";
             mensaje += "Name: " + nombre + " " + apellido + "\n";
             mensaje += "Email: " + email + "\n";
             mensaje += "Hotel: " + hotel + "\n";
-            mensaje += "Number of adults: " + cantidadAdultos + "\n";
-            mensaje += "Number of children: " + cantidadNinos + "\n";
+            mensaje += "Number of couples: " + cantidadAdultos + "\n";
             mensaje += "Total Price: $" + precioTotal;
 
             // Codificar el mensaje
@@ -255,8 +248,8 @@
             btnWhatsApp.style.display = "inline-block"; // Mostrar el enlace de WhatsApp
 
             // Crear el enlace para Gmail
-            var enlaceGmail = "mailto:harmonyexcursions@outlook.com?subject=Booking%20for%20Catalina%20Diving&body=" + mensajeCodificado;
-            
+            var enlaceGmail = "mailto:harmonyexcursions@outlook.com?subject=Booking%20for%20Los%20Haitises&body=" + mensajeCodificado;
+
             // Mostrar el enlace de Gmail
             var btnGmail = document.getElementById("btn-reservar-gmail");
             btnGmail.setAttribute("href", enlaceGmail);
